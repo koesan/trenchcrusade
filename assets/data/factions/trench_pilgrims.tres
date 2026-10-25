@@ -1,0 +1,72 @@
+[gd_resource type="Resource" script_class="FactionData" load_steps=15 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/faction_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/textures/factions/trench_pilgrims_logo.webp" id="logo"]
+[ext_resource type="Resource" path="res://assets/data/units/castigator.tres" id="2"]
+[ext_resource type="Resource" path="res://assets/data/units/combat_medic.tres" id="3"]
+[ext_resource type="Resource" path="res://assets/data/units/communicant_anti_tank_hunter.tres" id="4"]
+[ext_resource type="Resource" path="res://assets/data/units/communicant.tres" id="5"]
+[ext_resource type="Resource" path="res://assets/data/units/ecclesiastic_prisoner.tres" id="6"]
+[ext_resource type="Resource" path="res://assets/data/units/mendelist_ammo_monk.tres" id="7"]
+[ext_resource type="Resource" path="res://assets/data/units/shrine_anchorite.tres" id="8"]
+[ext_resource type="Resource" path="res://assets/data/units/stigmatic_nun.tres" id="9"]
+[ext_resource type="Resource" path="res://assets/data/units/trench_pilgrim.tres" id="10"]
+[ext_resource type="Resource" path="res://assets/data/units/war_prophet.tres" id="11"]
+[ext_resource type="Resource" path="res://assets/data/units/witchburner.tres" id="12"]
+[ext_resource type="Resource" path="res://assets/data/units/scripture_guardian.tres" id="14"]
+[ext_resource type="Resource" path="res://assets/data/units/observer.tres" id="15"]
+
+
+[ext_resource type="Resource" path="res://assets/data/armoury/anti_tank_hammer.tres" id="16"]
+[ext_resource type="Resource" path="res://assets/data/armoury/automatic_pistol__trench_pilgrims.tres" id="17"]
+[ext_resource type="Resource" path="res://assets/data/armoury/bayonet.tres" id="18"]
+[ext_resource type="Resource" path="res://assets/data/armoury/blessed_icon.tres" id="19"]
+[ext_resource type="Resource" path="res://assets/data/armoury/blunderbuss.tres" id="20"]
+[ext_resource type="Resource" path="res://assets/data/armoury/bolt_action_rifle.tres" id="21"]
+[ext_resource type="Resource" path="res://assets/data/armoury/field_shrine.tres" id="22"]
+[ext_resource type="Resource" path="res://assets/data/armoury/flail_scourge.tres" id="23"]
+[ext_resource type="Resource" path="res://assets/data/armoury/flamethrower__trench_pilgrims.tres" id="24"]
+[ext_resource type="Resource" path="res://assets/data/armoury/gas_mask.tres" id="25"]
+[ext_resource type="Resource" path="res://assets/data/armoury/great_hammer_maul.tres" id="26"]
+[ext_resource type="Resource" path="res://assets/data/armoury/greatsword_axe.tres" id="27"]
+[ext_resource type="Resource" path="res://assets/data/armoury/holy_icon_shield.tres" id="28"]
+[ext_resource type="Resource" path="res://assets/data/armoury/holy_relic.tres" id="29"]
+[ext_resource type="Resource" path="res://assets/data/armoury/incendiary_ammunition.tres" id="30"]
+[ext_resource type="Resource" path="res://assets/data/armoury/incendiary_grenades__heretic_legion.tres" id="31"]
+[ext_resource type="Resource" path="res://assets/data/armoury/iron_capirote.tres" id="32"]
+[ext_resource type="Resource" path="res://assets/data/armoury/machine_gun__trench_pilgrims.tres" id="33"]
+[ext_resource type="Resource" path="res://assets/data/armoury/martyrdom_device.tres" id="34"]
+[ext_resource type="Resource" path="res://assets/data/armoury/martyrdom_pills__trench_pilgrims.tres" id="35"]
+[ext_resource type="Resource" path="res://assets/data/armoury/medi_kit.tres" id="36"]
+[ext_resource type="Resource" path="res://assets/data/armoury/misericordia.tres" id="37"]
+[ext_resource type="Resource" path="res://assets/data/armoury/molotov_cocktail.tres" id="38"]
+[ext_resource type="Resource" path="res://assets/data/armoury/mountaineer_kit__trench_pilgrims.tres" id="39"]
+[ext_resource type="Resource" path="res://assets/data/armoury/musical_instrument.tres" id="40"]
+[ext_resource type="Resource" path="res://assets/data/armoury/musket.tres" id="41"]
+[ext_resource type="Resource" path="res://assets/data/armoury/pistol.tres" id="42"]
+[ext_resource type="Resource" path="res://assets/data/armoury/polearm.tres" id="43"]
+[ext_resource type="Resource" path="res://assets/data/armoury/punt_gun.tres" id="44"]
+[ext_resource type="Resource" path="res://assets/data/armoury/reinforced_armour__trench_pilgrims.tres" id="45"]
+[ext_resource type="Resource" path="res://assets/data/armoury/semi_automatic_rifle.tres" id="46"]
+[ext_resource type="Resource" path="res://assets/data/armoury/shotgun.tres" id="47"]
+[ext_resource type="Resource" path="res://assets/data/armoury/sniper_rifle__trench_pilgrims.tres" id="48"]
+[ext_resource type="Resource" path="res://assets/data/armoury/standard_armour.tres" id="49"]
+[ext_resource type="Resource" path="res://assets/data/armoury/submachine_gun__heretic_legion.tres" id="50"]
+[ext_resource type="Resource" path="res://assets/data/armoury/sword_axe.tres" id="51"]
+[ext_resource type="Resource" path="res://assets/data/armoury/trench_club.tres" id="52"]
+[ext_resource type="Resource" path="res://assets/data/armoury/trench_knife.tres" id="53"]
+[ext_resource type="Resource" path="res://assets/data/armoury/trench_shield.tres" id="54"]
+[ext_resource type="Resource" path="res://assets/data/armoury/troop_flag.tres" id="55"]
+[ext_resource type="Resource" path="res://assets/data/armoury/war_cross.tres" id="56"]
+
+[resource]
+script = ExtResource("1")
+faction_id = &"trench_pilgrims"
+display_name = "Trench Pilgrims (Hendek Hacıları)"
+alignment = 1
+team_color = Color(0.78, 0.58, 0.15, 1)
+available_units = [ExtResource("2"), ExtResource("3"), ExtResource("4"), ExtResource("5"), ExtResource("6"), ExtResource("7"), ExtResource("8"), ExtResource("9"), ExtResource("10"), ExtResource("11"), ExtResource("12"), ExtResource("14"), ExtResource("15")]
+has_faction_rule = false
+faction_rule_summary = ""
+logo = ExtResource("logo")
+armoury = Array[Resource]([ExtResource("16"), ExtResource("17"), ExtResource("18"), ExtResource("19"), ExtResource("20"), ExtResource("21"), ExtResource("22"), ExtResource("23"), ExtResource("24"), ExtResource("25"), ExtResource("26"), ExtResource("27"), ExtResource("28"), ExtResource("29"), ExtResource("30"), ExtResource("31"), ExtResource("32"), ExtResource("33"), ExtResource("34"), ExtResource("35"), ExtResource("36"), ExtResource("37"), ExtResource("38"), ExtResource("39"), ExtResource("40"), ExtResource("41"), ExtResource("42"), ExtResource("43"), ExtResource("44"), ExtResource("45"), ExtResource("46"), ExtResource("47"), ExtResource("48"), ExtResource("49"), ExtResource("50"), ExtResource("51"), ExtResource("52"), ExtResource("53"), ExtResource("54"), ExtResource("55"), ExtResource("56")])

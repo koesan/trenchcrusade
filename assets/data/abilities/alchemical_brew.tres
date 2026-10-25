@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="AbilityData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/ability_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+ability_id = &"alchemical_brew"
+display_name = "ALCHEMICAL_BREW"
+description = "ALCHEMICAL_BREW_DESC"
+action_key = "alchemical_brew"
+is_risky = false
+requires_not_engaged = false
+requires_engaged = false
+requires_standing = true
+requires_roll = true
+success_threshold = 7
+dice_modifier = 0
+target_type = "friendly"
+range_meters = 2.0
+target_must_be_alive = true
+target_same_faction = true
+effect_type = "buff_dice"
+effect_amount = 1
+crit_amount = 1
+buff_is_melee = true
+buff_also_ranged = true

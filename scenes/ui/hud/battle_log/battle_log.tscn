@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scenes/ui/hud/battle_log/battle_log.gd" id="1_script"]
+
+[node name="BattleLog" type="PanelContainer" groups=["hud_drawer"]]
+visible = false
+custom_minimum_size = Vector2(380, 300)
+theme_type_variation = &"PanelTooltip"
+script = ExtResource("1_script")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Title" type="Label" parent="VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"LabelTitleSmall"
+
+[node name="Scroll" type="ScrollContainer" parent="VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="Lines" type="RichTextLabel" parent="VBox/Scroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 13
+bbcode_enabled = true
+fit_content = true
+scroll_active = false

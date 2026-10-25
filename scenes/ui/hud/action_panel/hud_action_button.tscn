@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5hudactbtn01"]
+
+[ext_resource type="Script" path="res://scenes/ui/hud/action_panel/hud_action_button.gd" id="1_script"]
+
+[node name="HUDActionButton" type="Button"]
+custom_minimum_size = Vector2(68, 64)
+toggle_mode = true
+theme_type_variation = &"ButtonAction"
+theme_override_constants/icon_max_width = 20
+autowrap_mode = 3
+clip_text = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = false
+script = ExtResource("1_script")
+
+[node name="Hotkey" type="Label" parent="."]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 3.0
+offset_right = 25.0
+offset_bottom = 19.0
+mouse_filter = 2
+theme_type_variation = &"LabelGrayMedium"

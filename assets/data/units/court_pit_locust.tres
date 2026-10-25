@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="UnitData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/unit_data.gd" id="1"]
+[ext_resource type="Resource" path="res://assets/data/attacks/poison_stingers.tres" id="2"]
+[ext_resource type="Resource" path="res://assets/data/abilities/poison_stingers.tres" id="3"]
+
+[resource]
+script = ExtResource("1")
+unit_name = "Pit Locust"
+battlekit_rules = {
+"categories": [],
+"items": [&"crown_of_hellfire"]
+}
+faction_id = &"court_of_seven_headed_serpent"
+cost = 90
+availability_max = 3
+movement_range = 8.0
+speed = 8.0
+armour = 2
+melee_dice_modifier = 2
+ranged_dice_modifier = 0
+model_scene_path = "res://assets/models/characters/Pit_Locust.glb"
+has_fear = true
+attacks = [ExtResource("2")]
+abilities = [ExtResource("3")]
+keywords = {
+&"negate_fire": 1,
+&"flying": 1,
+&"demonic": 1,
+&"the_court": 1
+}

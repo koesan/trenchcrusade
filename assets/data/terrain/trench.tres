@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="TerrainFeatureData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/terrain_feature_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+feature_id = &"trench"
+display_name_key = "TERRAIN_TRENCH"
+desc_key = "TERRAIN_TRENCH_DESC"
+model_path = "res://assets/models/scenario/trench.glb"
+model_scale = 1.0
+y_offset = 0.0
+ring_color = Color(0.55, 0.5, 0.35, 1)
+radius = 2.0
+is_consumed_on_trigger = false
+keywords = {
+&"cover": 1
+}

@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="UnitData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/unit_data.gd" id="1"]
+[ext_resource type="Resource" path="res://assets/data/attacks/vivisector.tres" id="2"]
+[ext_resource type="Resource" path="res://assets/data/abilities/prize_specimens.tres" id="3"]
+[ext_resource type="Resource" path="res://assets/data/abilities/battlefield_vivisection.tres" id="4"]
+[ext_resource type="Resource" path="res://assets/data/attacks/gas_grenades.tres" id="4_r74pl"]
+
+[resource]
+script = ExtResource("1")
+unit_name = "Combat Biologist"
+battlekit_rules = {
+"none": true
+}
+faction_id = &"iron_sultanate"
+cost = 3
+cost_currency = 1
+alignment = 1
+availability_max = 1
+armour = 1
+melee_dice_modifier = 1
+model_scene_path = "res://assets/models/characters/Combat_Biologist.glb"
+abilities = Array[Resource]([ExtResource("3"), ExtResource("4")])
+attacks = Array[Resource]([ExtResource("2"), ExtResource("4_r74pl")])
+keywords = {
+&"battlefield_vivisection": 1,
+&"negate_fear": 1,
+&"negate_gas": 1,
+&"prize_specimens": 1
+}

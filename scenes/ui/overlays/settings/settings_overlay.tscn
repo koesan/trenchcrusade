@@ -1,0 +1,466 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/ui/overlays/settings/settings_overlay.gd" id="1_script"]
+[ext_resource type="Theme" path="res://assets/themes/gothic_theme.tres" id="2_theme"]
+
+[node name="SettingsOverlay" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_theme")
+script = ExtResource("1_script")
+
+[node name="Panel" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(460, 520)
+layout_mode = 2
+theme_type_variation = &"PanelIron"
+
+[node name="Margin" type="MarginContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBox" type="VBoxContainer" parent="Panel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Title" type="Label" parent="Panel/Margin/VBox"]
+layout_mode = 2
+theme_type_variation = &"LabelTitle"
+text = "ORDINANCES"
+horizontal_alignment = 1
+
+[node name="Divider" type="HSeparator" parent="Panel/Margin/VBox"]
+layout_mode = 2
+
+[node name="TabContainer" type="TabContainer" parent="Panel/Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+current_tab = 0
+
+[node name="Graphics" type="VBoxContainer" parent="Panel/Margin/VBox/TabContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+metadata/_tab_index = 0
+
+[node name="ResHBox" type="HBoxContainer" parent="Panel/Margin/VBox/TabContainer/Graphics"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/Margin/VBox/TabContainer/Graphics/ResHBox"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+text = "RESOLUTION"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ResOption" type="OptionButton" parent="Panel/Margin/VBox/TabContainer/Graphics/ResHBox"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_type_variation = &"ButtonSecondary"
+alignment = 1
+selected = 1
+item_count = 4
+popup/item_0/text = "1280×720"
+popup/item_0/id = 0
+popup/item_1/text = "1920×1080"
+popup/item_1/id = 1
+popup/item_2/text = "2560×1440"
+popup/item_2/id = 2
+popup/item_3/text = "3840×2160"
+popup/item_3/id = 3
+
+[node name="ScreenModeHBox" type="HBoxContainer" parent="Panel/Margin/VBox/TabContainer/Graphics"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/Margin/VBox/TabContainer/Graphics/ScreenModeHBox"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+text = "SCREEN_MODE"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ScreenModeOption" type="OptionButton" parent="Panel/Margin/VBox/TabContainer/Graphics/ScreenModeHBox"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_type_variation = &"ButtonSecondary"
+alignment = 1
+selected = 1
+item_count = 2
+popup/item_0/text = "Tam Ekran"
+popup/item_0/id = 0
+popup/item_1/text = "Pencereli"
+popup/item_1/id = 1
+
+[node name="VsyncHBox" type="HBoxContainer" parent="Panel/Margin/VBox/TabContainer/Graphics"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/Margin/VBox/TabContainer/Graphics/VsyncHBox"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+text = "VERTICAL SYNC"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VsyncCheck" type="CheckBox" parent="Panel/Margin/VBox/TabContainer/Graphics/VsyncHBox"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+button_pressed = true
+
+[node name="QualityHBox" type="HBoxContainer" parent="Panel/Margin/VBox/TabContainer/Graphics"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/Margin/VBox/TabContainer/Graphics/QualityHBox"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="QualityOption" type="OptionButton" parent="Panel/Margin/VBox/TabContainer/Graphics/QualityHBox"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_type_variation = &"ButtonSecondary"
+alignment = 1
+item_count = 3
+popup/item_0/text = "Low"
+popup/item_0/id = 0
+popup/item_1/text = "Medium"
+popup/item_1/id = 1
+popup/item_2/text = "High"
+popup/item_2/id = 2
+
+[node name="FpsHBox" type="HBoxContainer" parent="Panel/Margin/VBox/TabContainer/Graphics"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/Margin/VBox/TabContainer/Graphics/FpsHBox"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="FpsOption" type="OptionButton" parent="Panel/Margin/VBox/TabContainer/Graphics/FpsHBox"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_type_variation = &"ButtonSecondary"
+alignment = 1
+item_count = 5
+popup/item_0/text = "∞"
+popup/item_0/id = 0
+popup/item_1/text = "30"
+popup/item_1/id = 1
+popup/item_2/text = "60"
+popup/item_2/id = 2
+popup/item_3/text = "120"
+popup/item_3/id = 3
+popup/item_4/text = "144"
+popup/item_4/id = 4
+
+[node name="MotionHBox" type="HBoxContainer" parent="Panel/Margin/VBox/TabContainer/Graphics"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/Margin/VBox/TabContainer/Graphics/MotionHBox"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="MotionCheck" type="CheckBox" parent="Panel/Margin/VBox/TabContainer/Graphics/MotionHBox"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+
+[node name="Audio" type="VBoxContainer" parent="Panel/Margin/VBox/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 12
+metadata/_tab_index = 1
+
+[node name="MasterHBox" type="HBoxContainer" parent="Panel/Margin/VBox/TabContainer/Audio"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/Margin/VBox/TabContainer/Audio/MasterHBox"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "MASTER VOLUME"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="MasterSlider" type="HSlider" parent="Panel/Margin/VBox/TabContainer/Audio/MasterHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+value = 80.0
+
+[node name="MusicHBox" type="HBoxContainer" parent="Panel/Margin/VBox/TabContainer/Audio"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/Margin/VBox/TabContainer/Audio/MusicHBox"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "MUSIC"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="MusicSlider" type="HSlider" parent="Panel/Margin/VBox/TabContainer/Audio/MusicHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+value = 60.0
+
+[node name="SfxHBox" type="HBoxContainer" parent="Panel/Margin/VBox/TabContainer/Audio"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/Margin/VBox/TabContainer/Audio/SfxHBox"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "SFX"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SfxSlider" type="HSlider" parent="Panel/Margin/VBox/TabContainer/Audio/SfxHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+value = 90.0
+
+[node name="AmbientHBox" type="HBoxContainer" parent="Panel/Margin/VBox/TabContainer/Audio"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/Margin/VBox/TabContainer/Audio/AmbientHBox"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "AMBIENT"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="AmbientSlider" type="HSlider" parent="Panel/Margin/VBox/TabContainer/Audio/AmbientHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+value = 70.0
+
+[node name="PlayerDivider" type="HSeparator" parent="Panel/Margin/VBox/TabContainer/Audio"]
+layout_mode = 2
+
+[node name="NowPlayingHBox" type="HBoxContainer" parent="Panel/Margin/VBox/TabContainer/Audio"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/Margin/VBox/TabContainer/Audio/NowPlayingHBox"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "NOW_PLAYING"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="NowPlayingLabel" type="Label" parent="Panel/Margin/VBox/TabContainer/Audio/NowPlayingHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"LabelGoldAccent"
+text = "—"
+
+[node name="PlayerControls" type="HBoxContainer" parent="Panel/Margin/VBox/TabContainer/Audio"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 10
+
+[node name="PrevBtn" type="Button" parent="Panel/Margin/VBox/TabContainer/Audio/PlayerControls"]
+custom_minimum_size = Vector2(52, 0)
+layout_mode = 2
+theme_type_variation = &"ButtonSecondary"
+text = "⏮"
+
+[node name="ShuffleCheck" type="CheckButton" parent="Panel/Margin/VBox/TabContainer/Audio/PlayerControls"]
+layout_mode = 2
+text = "SHUFFLE"
+
+[node name="LoopCheck" type="CheckButton" parent="Panel/Margin/VBox/TabContainer/Audio/PlayerControls"]
+layout_mode = 2
+button_pressed = true
+text = "LOOP"
+
+[node name="NextBtn" type="Button" parent="Panel/Margin/VBox/TabContainer/Audio/PlayerControls"]
+custom_minimum_size = Vector2(52, 0)
+layout_mode = 2
+theme_type_variation = &"ButtonSecondary"
+text = "⏭"
+
+[node name="Language" type="VBoxContainer" parent="Panel/Margin/VBox/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 12
+metadata/_tab_index = 2
+
+[node name="PlayerNameHBox" type="HBoxContainer" parent="Panel/Margin/VBox/TabContainer/Language"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/Margin/VBox/TabContainer/Language/PlayerNameHBox"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+text = "PLAYER_NAME"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="PlayerNameInput" type="LineEdit" parent="Panel/Margin/VBox/TabContainer/Language/PlayerNameHBox"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+placeholder_text = "PLAYER_NAME"
+max_length = 32
+
+[node name="LangHBox" type="HBoxContainer" parent="Panel/Margin/VBox/TabContainer/Language"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/Margin/VBox/TabContainer/Language/LangHBox"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+text = "SELECT_LANGUAGE"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LangOption" type="OptionButton" parent="Panel/Margin/VBox/TabContainer/Language/LangHBox"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_type_variation = &"ButtonSecondary"
+alignment = 1
+selected = 0
+item_count = 2
+popup/item_0/text = "Türkçe"
+popup/item_0/id = 0
+popup/item_1/text = "English"
+popup/item_1/id = 1
+
+[node name="Controls" type="VBoxContainer" parent="Panel/Margin/VBox/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 12
+metadata/_tab_index = 3
+
+[node name="Grid" type="GridContainer" parent="Panel/Margin/VBox/TabContainer/Controls"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 24
+theme_override_constants/v_separation = 12
+columns = 2
+
+[node name="ForwardLbl" type="Label" parent="Panel/Margin/VBox/TabContainer/Controls/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "KEY_CAM_FORWARD"
+horizontal_alignment = 2
+
+[node name="ForwardVal" type="Label" parent="Panel/Margin/VBox/TabContainer/Controls/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"LabelGoldAccent"
+text = "KEY_VAL_FORWARD"
+
+[node name="BackLbl" type="Label" parent="Panel/Margin/VBox/TabContainer/Controls/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "KEY_CAM_BACK"
+horizontal_alignment = 2
+
+[node name="BackVal" type="Label" parent="Panel/Margin/VBox/TabContainer/Controls/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"LabelGoldAccent"
+text = "KEY_VAL_BACK"
+
+[node name="LeftLbl" type="Label" parent="Panel/Margin/VBox/TabContainer/Controls/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "KEY_CAM_LEFT"
+horizontal_alignment = 2
+
+[node name="LeftVal" type="Label" parent="Panel/Margin/VBox/TabContainer/Controls/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"LabelGoldAccent"
+text = "KEY_VAL_LEFT"
+
+[node name="RightLbl" type="Label" parent="Panel/Margin/VBox/TabContainer/Controls/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "KEY_CAM_RIGHT"
+horizontal_alignment = 2
+
+[node name="RightVal" type="Label" parent="Panel/Margin/VBox/TabContainer/Controls/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"LabelGoldAccent"
+text = "KEY_VAL_RIGHT"
+
+[node name="SelectLbl" type="Label" parent="Panel/Margin/VBox/TabContainer/Controls/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "KEY_SELECT"
+horizontal_alignment = 2
+
+[node name="SelectVal" type="Label" parent="Panel/Margin/VBox/TabContainer/Controls/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"LabelGoldAccent"
+text = "KEY_VAL_CLICK"
+
+[node name="OrbitLbl" type="Label" parent="Panel/Margin/VBox/TabContainer/Controls/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "KEY_ORBIT"
+horizontal_alignment = 2
+
+[node name="OrbitVal" type="Label" parent="Panel/Margin/VBox/TabContainer/Controls/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"LabelGoldAccent"
+text = "KEY_VAL_DRAG"
+
+[node name="RotateLbl" type="Label" parent="Panel/Margin/VBox/TabContainer/Controls/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "KEY_ROTATE"
+horizontal_alignment = 2
+
+[node name="RotateVal" type="Label" parent="Panel/Margin/VBox/TabContainer/Controls/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"LabelGoldAccent"
+text = "KEY_VAL_ROTATE"
+
+[node name="ZoomLbl" type="Label" parent="Panel/Margin/VBox/TabContainer/Controls/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "KEY_ZOOM"
+horizontal_alignment = 2
+
+[node name="ZoomVal" type="Label" parent="Panel/Margin/VBox/TabContainer/Controls/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"LabelGoldAccent"
+text = "KEY_VAL_WHEEL"
+
+[node name="FocusLbl" type="Label" parent="Panel/Margin/VBox/TabContainer/Controls/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "KEY_FOCUS"
+horizontal_alignment = 2
+
+[node name="FocusVal" type="Label" parent="Panel/Margin/VBox/TabContainer/Controls/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"LabelGoldAccent"
+text = "KEY_VAL_FOCUS"
+
+[node name="CloseSettingsBtn" type="Button" parent="Panel/Margin/VBox"]
+layout_mode = 2
+theme_type_variation = &"ButtonGhost"
+text = "APPLY LAWS"

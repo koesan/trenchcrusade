@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="UnitData" load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/unit_data.gd" id="1"]
+[ext_resource type="Resource" path="res://assets/data/attacks/teeth_and_claws.tres" id="2"]
+[ext_resource type="Resource" path="res://assets/data/abilities/frightening_speed.tres" id="3"]
+[ext_resource type="Script" path="res://scripts/data/loadout_option.gd" id="4"]
+[ext_resource type="Resource" path="res://assets/data/attacks/teeth_and_claws_infested.tres" id="5"]
+
+[sub_resource type="Resource" id="Loadout1"]
+script = ExtResource("4")
+option_name_key = "HOUND_LOADOUT_STANDARD"
+
+[sub_resource type="Resource" id="Loadout2"]
+script = ExtResource("4")
+option_name_key = "HOUND_LOADOUT_INFESTED"
+cost_delta = 5
+attacks_override = Array[Resource]([ExtResource("5")])
+
+[resource]
+script = ExtResource("1")
+unit_name = "Hound of the Black Grail"
+battlekit_rules = {
+"none": true
+}
+faction_id = &"cult_of_the_black_grail"
+cost = 55
+availability_max = 3
+movement_range = 8.0
+speed = 8.0
+armour = 0
+melee_dice_modifier = 1
+ranged_dice_modifier = 0
+model_scene_path = "res://assets/models/characters/Hound_of_the_Black_Grail.glb"
+is_leader = false
+has_tough = false
+has_memento_mori = false
+has_undead_fortitude = true
+has_fear = true
+has_regeneration = false
+is_disease_carrier = true
+attacks = [ExtResource("2")]
+abilities = [ExtResource("3")]
+loadout_options = Array[Resource]([SubResource("Loadout1"), SubResource("Loadout2")])
+keywords = {
+&"black_grail": 1,
+&"negate_gas": 1,
+&"dash_dice_bonus": 1,
+&"ignore_standup_penalty": 1
+}

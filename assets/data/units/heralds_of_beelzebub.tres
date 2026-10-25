@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="UnitData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/unit_data.gd" id="1"]
+[ext_resource type="Resource" path="res://assets/data/attacks/infected_proboscis.tres" id="2"]
+[ext_resource type="Resource" path="res://assets/data/attacks/putrid_shotgun.tres" id="3"]
+[ext_resource type="Resource" path="res://assets/data/abilities/infected_proboscis_ability.tres" id="4"]
+[ext_resource type="Script" path="res://scripts/data/loadout_option.gd" id="6"]
+
+[sub_resource type="Resource" id="Loadout1"]
+script = ExtResource("6")
+option_name_key = "HERALD_LOADOUT_STANDARD"
+
+[sub_resource type="Resource" id="Loadout2"]
+script = ExtResource("6")
+option_name_key = "HERALD_LOADOUT_BUZZING"
+cost_delta = 10
+extra_keywords = {
+&"maddening_buzzing": 1
+}
+max_per_warband = 1
+
+[resource]
+script = ExtResource("1")
+unit_name = "Herald of Beelzebub"
+battlekit_rules = {
+"categories": [1],
+"items": [&"compound_eyes_helmet"]
+}
+faction_id = &"cult_of_the_black_grail"
+cost = 70
+kit_cost = 20
+availability_max = 4
+movement_range = 10.0
+speed = 10.0
+model_scene_path = "res://assets/models/characters/Heralds_of_Beelzebub.glb"
+has_fear = true
+abilities = Array[Resource]([ExtResource("4")])
+attacks = Array[Resource]([ExtResource("2"), ExtResource("3")])
+loadout_options = Array[Resource]([SubResource("Loadout1"), SubResource("Loadout2")])
+keywords = {
+&"black_grail": 1,
+&"flying": 1,
+&"infected_proboscis": 1,
+&"negate_gas": 1,
+&"skirmisher": 1
+}

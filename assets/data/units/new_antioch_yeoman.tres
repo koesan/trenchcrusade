@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="UnitData" format=3 uid="uid://cqco270lajdxx"]
+
+[ext_resource type="Script" uid="uid://dse6je2a1x0hp" path="res://scripts/data/unit_data.gd" id="1"]
+[ext_resource type="Resource" path="res://assets/data/attacks/bayonet.tres" id="2"]
+[ext_resource type="Script" uid="uid://c71iu7y0m8hvf" path="res://scripts/data/loadout_option.gd" id="3"]
+[ext_resource type="Resource" path="res://assets/data/attacks/bolt_action_rifle.tres" id="4"]
+[ext_resource type="Resource" path="res://assets/data/attacks/frag_grenade.tres" id="5"]
+
+[sub_resource type="Resource" id="Loadout1"]
+script = ExtResource("3")
+option_name_key = "YEOMAN_LOADOUT_STANDARD"
+
+[sub_resource type="Resource" id="Loadout3"]
+script = ExtResource("3")
+option_name_key = "YEOMAN_LOADOUT_MOLE"
+cost_delta = 10
+extra_keywords = {
+&"infiltrator": 1
+}
+max_per_warband = 2
+limit_group = &"trench_mole"
+
+[sub_resource type="Resource" id="LO_FRAG"]
+script = ExtResource("3")
+option_name_key = "YEOMAN_LOADOUT_FRAG"
+attacks_override = Array[Resource]([ExtResource("4"), ExtResource("2"), ExtResource("5")])
+cost_delta = 7
+max_per_warband = 3
+
+[resource]
+script = ExtResource("1")
+unit_name = "Yeoman"
+faction_id = &"new_antioch"
+cost = 37
+kit_cost = 7
+model_scene_path = "res://assets/models/characters/Yeoman.glb"
+attacks = Array[Resource]([ExtResource("4"), ExtResource("2")])
+loadout_options = Array[Resource]([SubResource("Loadout1"), SubResource("Loadout3"), SubResource("LO_FRAG")])
+keywords = {
+&"new_antioch": 1
+}

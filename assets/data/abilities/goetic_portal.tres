@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="AbilityData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/ability_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+ability_id = &"goetic_portal"
+display_name = "GOETIC_PORTAL"
+description = "GOETIC_PORTAL_DESC"
+action_key = "goetic_portal"
+is_risky = true
+requires_not_engaged = false
+requires_engaged = false
+requires_standing = false
+requires_roll = true
+success_threshold = 7
+dice_modifier = 1
+target_type = "position"
+range_meters = 6.0
+target_must_be_alive = true
+target_same_faction = true
+effect_type = "teleport"
+effect_amount = 0
+crit_amount = 0
+max_distance = 6.0

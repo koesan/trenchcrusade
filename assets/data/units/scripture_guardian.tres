@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="UnitData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/unit_data.gd" id="1"]
+[ext_resource type="Resource" path="res://assets/data/abilities/slow.tres" id="3"]
+[ext_resource type="Resource" path="res://assets/data/attacks/greatsword_axe.tres" id="3_t42a4"]
+[ext_resource type="Resource" path="res://assets/data/abilities/vengeful_scripture.tres" id="4"]
+
+[resource]
+script = ExtResource("1")
+unit_name = "Scripture Guardian"
+battlekit_rules = {
+"none": true
+}
+faction_id = &"new_antioch"
+cost = 7
+cost_currency = 1
+availability_max = 1
+armour = 2
+melee_dice_modifier = 1
+model_scene_path = "res://assets/models/characters/Scripture_Guardian.glb"
+abilities = Array[Resource]([ExtResource("3"), ExtResource("4")])
+attacks = Array[Resource]([ExtResource("3_t42a4")])
+keywords = {
+&"golem": 1,
+&"negate_fear": 1,
+&"negate_gas": 1,
+&"negate_shrapnel": 1,
+&"slow_dash": 1
+}

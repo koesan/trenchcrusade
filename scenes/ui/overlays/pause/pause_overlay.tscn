@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/ui/overlays/pause/pause_overlay.gd" id="1_script"]
+[ext_resource type="Theme" path="res://assets/themes/gothic_theme.tres" id="2_theme"]
+
+[node name="PauseOverlay" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_theme")
+script = ExtResource("1_script")
+
+[node name="Panel" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(320, 360)
+layout_mode = 2
+theme_type_variation = &"PanelIron"
+
+[node name="Margin" type="MarginContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBox" type="VBoxContainer" parent="Panel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Title" type="Label" parent="Panel/Margin/VBox"]
+layout_mode = 2
+theme_type_variation = &"LabelTitle"
+text = "PAUSE_MENU"
+horizontal_alignment = 1
+
+[node name="SubTitle" type="Label" parent="Panel/Margin/VBox"]
+layout_mode = 2
+theme_type_variation = &"LabelSubtitle"
+text = "THE ARGONNE · SECTOR IV"
+horizontal_alignment = 1
+
+[node name="Divider" type="HSeparator" parent="Panel/Margin/VBox"]
+layout_mode = 2
+
+[node name="ResumeBtn" type="Button" parent="Panel/Margin/VBox"]
+layout_mode = 2
+theme_type_variation = &"ButtonSecondary"
+text = "RESUME_MISSION"
+
+[node name="SettingsBtn" type="Button" parent="Panel/Margin/VBox"]
+layout_mode = 2
+theme_type_variation = &"ButtonSecondary"
+text = "ORDINANCES_SETTINGS"
+
+[node name="SaveBtn" type="Button" parent="Panel/Margin/VBox"]
+layout_mode = 2
+theme_type_variation = &"ButtonSecondary"
+text = "SAVE_GAME"
+
+[node name="SaveQuitBtn" type="Button" parent="Panel/Margin/VBox"]
+layout_mode = 2
+theme_type_variation = &"ButtonDanger"
+text = "SAVE_QUIT"

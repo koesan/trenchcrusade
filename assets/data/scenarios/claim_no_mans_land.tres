@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="ScenarioData" format=3 uid="uid://dxgosom3ublu2"]
+
+[ext_resource type="Script" uid="uid://u87dworx8pa3" path="res://scripts/data/scenario_data.gd" id="1"]
+[ext_resource type="Script" uid="uid://x1gshfhx1xjv" path="res://scripts/data/scenario_objective.gd" id="2"]
+[ext_resource type="Script" uid="uid://bgchg7ax3t8im" path="res://scripts/rules/scenarios/claim_no_mans_land.gd" id="3"]
+[ext_resource type="Texture2D" path="res://assets/textures/ui/menu_backgrounds/lobby_bg_03.jpg" id="banner_art"]
+
+[sub_resource type="Resource" id="Obj1"]
+script = ExtResource("2")
+objective_id = &"cnml_1"
+label_key = "OBJECTIVE_ALPHA"
+position = Vector3(-0.7, -1.6, 2.2)
+control_radius = 1.0
+
+[sub_resource type="Resource" id="Obj2"]
+script = ExtResource("2")
+objective_id = &"cnml_2"
+label_key = "OBJECTIVE_BETA"
+position = Vector3(-0.7, -1.6, 19.25)
+control_radius = 1.0
+
+[sub_resource type="Resource" id="Obj3"]
+script = ExtResource("2")
+objective_id = &"cnml_3"
+label_key = "OBJECTIVE_GAMMA"
+position = Vector3(-0.7, -5.95, 14.65)
+control_radius = 1.0
+
+[sub_resource type="Resource" id="Obj4"]
+script = ExtResource("2")
+objective_id = &"cnml_4"
+label_key = "OBJECTIVE_DELTA"
+position = Vector3(-15.95, -1, 14.65)
+control_radius = 1.0
+
+[sub_resource type="Resource" id="Obj5"]
+script = ExtResource("2")
+objective_id = &"cnml_5"
+label_key = "OBJECTIVE_EPSILON"
+position = Vector3(20.2, -1, 15.55)
+control_radius = 1.0
+
+[resource]
+script = ExtResource("1")
+scenario_id = &"claim_no_mans_land"
+scenario_name_key = "SCENARIO_CLAIM_NAME"
+scenario_desc_key = "SCENARIO_CLAIM_DESC"
+banner = ExtResource("banner_art")
+victory_type = 1
+glory_budget = 10
+objectives = Array[Resource]([SubResource("Obj1"), SubResource("Obj2"), SubResource("Obj3"), SubResource("Obj4"), SubResource("Obj5")])
+logic_script = ExtResource("3")
+terrain_placements = Array[Resource]([])

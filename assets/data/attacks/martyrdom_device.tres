@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AttackData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/attack_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+attack_name = "ATTACK_MARTYRDOM_DEVICE"
+attack_range = 3.0
+description = "ATTACK_MARTYRDOM_DEVICE_DESC"
+attack_type = "AREA"
+is_blast = true
+blast_radius = 3.0

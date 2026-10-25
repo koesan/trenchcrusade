@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="UnitData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/unit_data.gd" id="1"]
+[ext_resource type="Resource" path="res://assets/data/attacks/pistol.tres" id="2"]
+[ext_resource type="Resource" path="res://assets/data/abilities/mastery_of_the_elements.tres" id="3"]
+[ext_resource type="Resource" path="res://assets/data/abilities/elemental_change.tres" id="4"]
+[ext_resource type="Resource" path="res://assets/data/attacks/pistol_melee.tres" id="5"]
+
+[resource]
+script = ExtResource("1")
+unit_name = "Jabirean Alchemist"
+faction_id = &"iron_sultanate"
+cost = 61
+kit_cost = 6
+availability_max = 1
+melee_dice_modifier = 1
+ranged_dice_modifier = 2
+model_scene_path = "res://assets/models/characters/Jabirean_Alchemist.glb"
+abilities = Array[Resource]([ExtResource("3"), ExtResource("4")])
+attacks = Array[Resource]([ExtResource("2"), ExtResource("5")])
+keywords = {
+&"elite": 1,
+&"mastery_of_elements": 1,
+&"sultanate": 1
+}

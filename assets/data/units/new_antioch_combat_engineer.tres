@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="UnitData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/unit_data.gd" id="1"]
+[ext_resource type="Resource" path="res://assets/data/attacks/bolt_action_rifle.tres" id="2"]
+[ext_resource type="Resource" path="res://assets/data/abilities/battlefield_demolition.tres" id="3"]
+[ext_resource type="Resource" path="res://assets/data/abilities/fortify.tres" id="4"]
+[ext_resource type="Resource" path="res://assets/data/abilities/defuse_mine.tres" id="5"]
+[ext_resource type="Resource" path="res://assets/data/abilities/set_mine.tres" id="6"]
+[ext_resource type="Resource" path="res://assets/data/attacks/sapper_shovel.tres" id="7"]
+[ext_resource type="Resource" path="res://assets/data/abilities/dug_in.tres" id="8"]
+[ext_resource type="Script" path="res://scripts/data/loadout_option.gd" id="9"]
+[ext_resource type="Resource" path="res://assets/data/attacks/satchel_charge.tres" id="10"]
+
+[sub_resource type="Resource" id="LO_STD"]
+script = ExtResource("9")
+option_name_key = "ENGINEER_LOADOUT_STANDARD"
+
+[sub_resource type="Resource" id="LO_SATCHEL"]
+script = ExtResource("9")
+option_name_key = "ENGINEER_LOADOUT_SATCHEL"
+attacks_override = Array[Resource]([ExtResource("7"), ExtResource("10")])
+cost_delta = 5
+max_per_warband = 3
+
+[resource]
+script = ExtResource("1")
+unit_name = "Combat Engineer"
+battlekit_rules = {
+"categories": [0, 1, 2, 4, 5]
+}
+faction_id = &"new_antioch"
+cost = 90
+kit_cost = 10
+availability_max = 2
+armour = 2
+melee_dice_modifier = 1
+model_scene_path = "res://assets/models/characters/Combat_Engineer.glb"
+abilities = Array[Resource]([ExtResource("3"), ExtResource("4"), ExtResource("5"), ExtResource("6"), ExtResource("8")])
+attacks = Array[Resource]([ExtResource("2"), ExtResource("7")])
+loadout_options = Array[Resource]([SubResource("LO_STD"), SubResource("LO_SATCHEL")])
+keywords = {
+&"ballistic_box_armour": 1,
+&"dug_in": 1,
+&"negate_heavy_effect": 1,
+&"negate_mined": 1,
+&"negate_shrapnel": 1,
+&"new_antioch": 1
+}

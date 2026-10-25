@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="UnitData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/unit_data.gd" id="1"]
+[ext_resource type="Resource" path="res://assets/data/attacks/bolt_action_rifle.tres" id="3"]
+[ext_resource type="Resource" path="res://assets/data/attacks/bayonet.tres" id="3_t1jcp"]
+[ext_resource type="Resource" path="res://assets/data/abilities/unholy_hymns.tres" id="4"]
+[ext_resource type="Script" path="res://scripts/data/loadout_option.gd" id="5"]
+[ext_resource type="Resource" path="res://assets/data/attacks/blasphemous_staff.tres" id="6"]
+
+[sub_resource type="Resource" id="LO_STD"]
+script = ExtResource("5")
+option_name_key = "CHORISTER_LOADOUT_STANDARD"
+
+[sub_resource type="Resource" id="LO_STAFF"]
+script = ExtResource("5")
+option_name_key = "CHORISTER_LOADOUT_STAFF"
+attacks_override = Array[Resource]([ExtResource("3"), ExtResource("6")])
+
+[resource]
+script = ExtResource("1")
+unit_name = "Heretic Chorister"
+faction_id = &"heretic_legion"
+cost = 77
+kit_cost = 12
+availability_max = 1
+melee_dice_modifier = 2
+ranged_dice_modifier = -2
+model_scene_path = "res://assets/models/characters/Heretic_Chorister.glb"
+has_fear = true
+abilities = Array[Resource]([ExtResource("4")])
+attacks = Array[Resource]([ExtResource("3"), ExtResource("3_t1jcp")])
+loadout_options = Array[Resource]([SubResource("LO_STD"), SubResource("LO_STAFF")])
+keywords = {
+&"elite": 1,
+&"heretic": 1,
+&"unholy_hymns": 1
+}

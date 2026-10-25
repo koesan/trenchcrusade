@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+<defs><linearGradient id="gilt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4e2b4"/><stop offset="0.45" stop-color="#d2ae6c"/><stop offset="1" stop-color="#8c6c3a"/></linearGradient></defs>
+<g transform="translate(0 1.6)" opacity="0.85"><g fill="#0b0908"><path d="M12 6 H46 C50 6 52 9 52 12 V52 C52 56 54 58 58 58 H18 C14 58 12 55 12 52Z M20 18 H44 V22 H20Z M20 28 H44 V32 H20Z M20 38 H36 V42 H20Z" fill-rule="evenodd"/>
+<path d="M6 10 C6 6 12 6 12 10 V16 H6Z"/></g></g>
+<g><g fill="url(#gilt)"><path d="M12 6 H46 C50 6 52 9 52 12 V52 C52 56 54 58 58 58 H18 C14 58 12 55 12 52Z M20 18 H44 V22 H20Z M20 28 H44 V32 H20Z M20 38 H36 V42 H20Z" fill-rule="evenodd"/>
+<path d="M6 10 C6 6 12 6 12 10 V16 H6Z"/></g></g>
+</svg>

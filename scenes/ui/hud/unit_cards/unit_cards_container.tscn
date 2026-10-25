@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scenes/ui/hud/unit_cards/unit_cards_container.gd" id="1_script"]
+
+[node name="UnitCards" type="VBoxContainer"]
+custom_minimum_size = Vector2(220, 0)
+mouse_filter = 2
+theme_override_constants/separation = 6
+script = ExtResource("1_script")
+
+[node name="Title" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_type_variation = &"LabelTitleSmall"
+
+[node name="Scroll" type="ScrollContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="CardsContainer" type="VBoxContainer" parent="Scroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 3

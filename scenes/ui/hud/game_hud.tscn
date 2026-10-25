@@ -1,0 +1,349 @@
+[gd_scene load_steps=28 format=3]
+[ext_resource type="Script" path="res://scenes/ui/hud/game_hud.gd" id="1_hud"]
+[ext_resource type="Texture2D" path="res://assets/ui/icons/ducat.svg" id="2_coin"]
+[ext_resource type="Texture2D" path="res://assets/ui/icons/blessing.svg" id="3_cross"]
+[ext_resource type="Texture2D" path="res://assets/ui/icons/flat/blood.svg" id="4_blood"]
+[ext_resource type="Theme" path="res://assets/themes/gothic_theme.tres" id="5_theme"]
+[ext_resource type="Texture2D" path="res://assets/textures/ui/vignette_overlay.png" id="6_vignette"]
+[ext_resource type="PackedScene" path="res://scenes/ui/faction_select/faction_selection_panel.tscn" id="8_faction_selection_panel"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud/deploy/deploy_panel.tscn" id="9_deploy_panel"]
+[ext_resource type="PackedScene" path="res://scenes/ui/armoury/armoury_panel.tscn" id="33_armoury_panel"]
+[ext_resource type="PackedScene" path="res://scenes/ui/overlays/guide/guide_overlay.tscn" id="12_guide_overlay"]
+[ext_resource type="PackedScene" path="res://scenes/ui/overlays/pause/pause_overlay.tscn" id="16_pause_overlay"]
+[ext_resource type="PackedScene" path="res://scenes/ui/overlays/chronicles/chronicles_overlay.tscn" id="17_chronicles_overlay"]
+[ext_resource type="PackedScene" path="res://scenes/ui/overlays/roster/roster_overlay.tscn" id="18_roster_overlay"]
+[ext_resource type="PackedScene" path="res://scenes/ui/overlays/blessings/blessings_overlay.tscn" id="19_blessings_overlay"]
+[ext_resource type="PackedScene" path="res://scenes/ui/overlays/keywords/keywords_overlay.tscn" id="32_keywords_overlay"]
+[ext_resource type="PackedScene" path="res://scenes/ui/overlays/profile/profile_overlay.tscn" id="20_profile_overlay"]
+[ext_resource type="PackedScene" path="res://scenes/ui/overlays/settings/settings_overlay.tscn" id="21_settings_overlay"]
+[ext_resource type="PackedScene" path="res://scenes/ui/overlays/game_end/game_end_overlay.tscn" id="22_game_end_overlay"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud/deploy/deploy_unit_card.tscn" id="26_deploy_unit_card"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud/top_bar/top_bar.tscn" id="25_top_bar"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud/unit_cards/unit_cards_container.tscn" id="29_unit_cards_container"]
+[ext_resource type="Script" path="res://scenes/ui/hud/objectives/objectives_panel.gd" id="30_objectives_script"]
+[ext_resource type="Script" path="res://scenes/ui/hud/resources_bar/resources_panel.gd" id="31_resources_script"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud/turn_banner/turn_banner.tscn" id="34_turn_banner"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud/command_bar/command_bar.tscn" id="35_command_bar"]
+[ext_resource type="Texture2D" path="res://assets/ui/icons/end_turn.svg" id="36_end"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud/battle_log/battle_log.tscn" id="37_log"]
+[ext_resource type="Script" path="res://scenes/ui/hud/notice_feed/notice_feed.gd" id="38_notice_feed"]
+[node name="GameHUD" type="CanvasLayer"]
+theme = ExtResource("5_theme")
+script = ExtResource("1_hud")
+
+[node name="__vignette" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("6_vignette")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TopBar" parent="MarginContainer/VBoxContainer" instance=ExtResource("25_top_bar")]
+layout_mode = 2
+
+[node name="ArmouryPanel" parent="." instance=ExtResource("33_armoury_panel")]
+visible = false
+
+[node name="ObjectivesPanel" type="PanelContainer" parent="." groups=["hud_drawer"]]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -255.0
+offset_top = 82.0
+offset_right = -15.0
+offset_bottom = 82.0
+grow_horizontal = 0
+theme_type_variation = &"PanelIron"
+script = ExtResource("30_objectives_script")
+
+[node name="Margin" type="MarginContainer" parent="ObjectivesPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 8
+
+[node name="VBox" type="VBoxContainer" parent="ObjectivesPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Title" type="Label" parent="ObjectivesPanel/Margin/VBox"]
+layout_mode = 2
+theme_type_variation = &"LabelGoldAccent"
+text = "OBJECTIVES"
+
+[node name="VPLabel" type="Label" parent="ObjectivesPanel/Margin/VBox"]
+layout_mode = 2
+theme_type_variation = &"LabelGoldAccent"
+text = "VP"
+
+[node name="Obj1" type="Label" parent="ObjectivesPanel/Margin/VBox"]
+layout_mode = 2
+theme_type_variation = &"LabelParchmentTan"
+text = "✓ SECURE TRENCH LINE ALPHA"
+
+[node name="Obj2" type="Label" parent="ObjectivesPanel/Margin/VBox"]
+layout_mode = 2
+theme_type_variation = &"LabelParchmentTan"
+text = "◆ ELIMINATE HERETIC ARTILLERY"
+
+[node name="ResourcesPanel" type="PanelContainer" parent="." groups=["hud_drawer"]]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -275.0
+offset_top = 122.0
+offset_right = -15.0
+offset_bottom = 122.0
+grow_horizontal = 0
+theme_type_variation = &"PanelIron"
+script = ExtResource("31_resources_script")
+
+[node name="Margin" type="MarginContainer" parent="ResourcesPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 8
+
+[node name="HBox" type="VBoxContainer" parent="ResourcesPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="DukatsHBox" type="HBoxContainer" parent="ResourcesPanel/Margin/HBox"]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="ResourcesPanel/Margin/HBox/DukatsHBox"]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+texture = ExtResource("2_coin")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DukatsVal" type="Label" parent="ResourcesPanel/Margin/HBox/DukatsHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "700"
+
+[node name="DukatsLbl" type="Label" parent="ResourcesPanel/Margin/HBox/DukatsHBox"]
+layout_mode = 2
+theme_type_variation = &"LabelMutedBrown"
+text = "DUKATS"
+
+[node name="FaithHBox" type="HBoxContainer" parent="ResourcesPanel/Margin/HBox"]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="ResourcesPanel/Margin/HBox/FaithHBox"]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+texture = ExtResource("3_cross")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FaithVal" type="Label" parent="ResourcesPanel/Margin/HBox/FaithHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "3 / 3"
+
+[node name="FaithLbl" type="Label" parent="ResourcesPanel/Margin/HBox/FaithHBox"]
+layout_mode = 2
+theme_type_variation = &"LabelMutedBrown"
+text = "FAITH"
+
+[node name="BloodHBox" type="HBoxContainer" parent="ResourcesPanel/Margin/HBox"]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="ResourcesPanel/Margin/HBox/BloodHBox"]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+modulate = Color(0.816, 0.278, 0.231, 1)
+texture = ExtResource("4_blood")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BloodMarkersVal" type="Label" parent="ResourcesPanel/Margin/HBox/BloodHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+
+[node name="BloodMarkersLbl" type="Label" parent="ResourcesPanel/Margin/HBox/BloodHBox"]
+layout_mode = 2
+theme_type_variation = &"LabelMutedBrown"
+text = "BLOOD MARKERS"
+
+[node name="BattleLog" parent="." instance=ExtResource("37_log")]
+unique_name_in_owner = true
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="BottomPanel" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="DeployPanel" parent="MarginContainer/VBoxContainer/BottomPanel" instance=ExtResource("9_deploy_panel")]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+
+
+[node name="LeftSpacer" type="Control" parent="MarginContainer/VBoxContainer/BottomPanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.001
+mouse_filter = 2
+
+[node name="CommandBar" parent="MarginContainer/VBoxContainer/BottomPanel" node_paths=PackedStringArray("end_turn_button") instance=ExtResource("35_command_bar")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+end_turn_button = NodePath("../EndTurnButton")
+
+[node name="RightSpacer" type="Control" parent="MarginContainer/VBoxContainer/BottomPanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.001
+mouse_filter = 2
+
+[node name="EndTurnButton" type="Button" parent="MarginContainer/VBoxContainer/BottomPanel"]
+visible = false
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 2
+size_flags_vertical = 8
+theme_type_variation = &"ButtonPrimary"
+theme_override_constants/icon_max_width = 18
+theme_override_constants/h_separation = 8
+theme_override_font_sizes/font_size = 16
+icon = ExtResource("36_end")
+
+[node name="RosterColumn" type="MarginContainer" parent="."]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 168.0
+offset_right = 236.0
+offset_bottom = -232.0
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="UnitCards" parent="RosterColumn" instance=ExtResource("29_unit_cards_container")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="Notices" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -380.0
+offset_top = 176.0
+offset_right = 380.0
+offset_bottom = 176.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="TurnBanner" parent="Notices" instance=ExtResource("34_turn_banner")]
+layout_mode = 2
+
+[node name="NoticeFeed" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -230.0
+offset_top = 292.0
+offset_right = 230.0
+offset_bottom = 292.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_constants/separation = 6
+script = ExtResource("38_notice_feed")
+
+[node name="ModalCenter" type="CenterContainer" parent="."]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="FactionPanel" parent="." instance=ExtResource("8_faction_selection_panel")]
+visible = false
+
+[node name="GuideOverlay" parent="." instance=ExtResource("12_guide_overlay")]
+unique_name_in_owner = true
+visible = false
+
+[node name="PauseOverlay" parent="." instance=ExtResource("16_pause_overlay")]
+unique_name_in_owner = true
+visible = false
+
+[node name="ChroniclesOverlay" parent="." instance=ExtResource("17_chronicles_overlay")]
+unique_name_in_owner = true
+visible = false
+
+[node name="RosterOverlay" parent="." instance=ExtResource("18_roster_overlay")]
+unique_name_in_owner = true
+visible = false
+
+[node name="BlessingsOverlay" parent="." instance=ExtResource("19_blessings_overlay")]
+unique_name_in_owner = true
+visible = false
+
+[node name="KeywordsOverlay" parent="." instance=ExtResource("32_keywords_overlay")]
+unique_name_in_owner = true
+visible = false
+
+[node name="ProfileOverlay" parent="." instance=ExtResource("20_profile_overlay")]
+unique_name_in_owner = true
+visible = false
+
+[node name="SettingsOverlay" parent="." instance=ExtResource("21_settings_overlay")]
+unique_name_in_owner = true
+visible = false
+
+[node name="GameEndOverlay" parent="." instance=ExtResource("22_game_end_overlay")]
+unique_name_in_owner = true
+visible = false
+
+[connection signal="chronicles_pressed" from="MarginContainer/VBoxContainer/TopBar" to="." method="_on_chronicles_triggered"]
+[connection signal="pause_pressed" from="MarginContainer/VBoxContainer/TopBar" to="." method="_on_pause_triggered"]
+[connection signal="objectives_pressed" from="MarginContainer/VBoxContainer/TopBar" to="." method="_on_objectives_toggle_pressed"]
+[connection signal="resources_pressed" from="MarginContainer/VBoxContainer/TopBar" to="." method="_on_resources_toggle_pressed"]
+[connection signal="log_pressed" from="MarginContainer/VBoxContainer/TopBar" to="." method="_on_log_toggle_pressed"]
+

@@ -1,0 +1,87 @@
+[gd_scene load_steps=12 format=3]
+
+[ext_resource type="Script" path="res://scenes/game/game.gd" id="1_game"]
+[ext_resource type="PackedScene" path="res://scenes/map/map_board.tscn" id="2_map"]
+[ext_resource type="Script" path="res://scripts/camera/tactical_camera.gd" id="3_cam"]
+[ext_resource type="Script" path="res://scripts/input/map_input.gd" id="4_input"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud/game_hud.tscn" id="5_hud"]
+[ext_resource type="Script" path="res://scenes/game/battle_feedback.gd" id="6_feedback"]
+[ext_resource type="Script" path="res://scenes/game/target_line.gd" id="7_tline"]
+
+[sub_resource type="ProceduralSkyMaterial" id="Sky_overcast"]
+sky_top_color = Color(0.045, 0.04, 0.045, 1)
+sky_horizon_color = Color(0.2, 0.135, 0.11, 1)
+sky_curve = 0.12
+ground_bottom_color = Color(0.02, 0.016, 0.016, 1)
+ground_horizon_color = Color(0.16, 0.1, 0.085, 1)
+ground_curve = 0.06
+sun_angle_max = 0.0
+sun_curve = 0.0
+
+[sub_resource type="Sky" id="Sky_battlefield"]
+sky_material = SubResource("Sky_overcast")
+
+[sub_resource type="Environment" id="Environment_dark"]
+background_mode = 2
+sky = SubResource("Sky_battlefield")
+ambient_light_source = 3
+ambient_light_color = Color(0.35, 0.32, 0.32, 1)
+ambient_light_sky_contribution = 0.55
+ambient_light_energy = 1.2
+tonemap_mode = 2
+tonemap_white = 1.2
+ssao_enabled = true
+ssao_radius = 1.4
+ssao_intensity = 1.6
+glow_enabled = true
+glow_intensity = 0.5
+fog_enabled = true
+fog_light_color = Color(0.17, 0.115, 0.095, 1)
+fog_density = 0.0042
+fog_sky_affect = 0.35
+adjustment_enabled = true
+adjustment_contrast = 1.08
+adjustment_saturation = 0.86
+
+[node name="Game" type="Node3D"]
+script = ExtResource("1_game")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_dark")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 0, 15, 0)
+light_color = Color(0.9, 0.85, 0.8, 1)
+light_energy = 1.4
+shadow_enabled = true
+
+[node name="FillLight" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.707107, 0.353553, -0.612372, 0, 0.866025, 0.5, 0.707107, 0.353553, -0.612372, 0, 15, 0)
+light_color = Color(0.55, 0.62, 0.78, 1)
+light_energy = 0.35
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+
+[node name="MapBoard" parent="NavigationRegion3D" instance=ExtResource("2_map")]
+
+[node name="TacticalCamera" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 15)
+script = ExtResource("3_cam")
+
+[node name="MapInput" type="Node" parent="."]
+script = ExtResource("4_input")
+camera_path = NodePath("../TacticalCamera")
+
+[node name="Units" type="Node3D" parent="."]
+
+[node name="BattleFeedback" type="Node3D" parent="."]
+script = ExtResource("6_feedback")
+
+[node name="TargetLine" type="MeshInstance3D" parent="."]
+script = ExtResource("7_tline")
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://scenes/unit/unit.tscn")
+spawn_path = NodePath("../Units")
+
+[node name="GameHUD" parent="." instance=ExtResource("5_hud")]

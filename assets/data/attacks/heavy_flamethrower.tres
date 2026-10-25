@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="AttackData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/attack_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+attack_name = "ATTACK_HEAVY_FLAMETHROWER"
+attack_range = 10.0
+description = "ATTACK_HEAVY_FLAMETHROWER_DESC"
+attack_type = "RANGED"
+hands = "2H"
+ignore_armour = true
+is_fire = true
+injury_dice_modifier = -1
+keywords = {
+&"automatic": 2,
+&"flamethrower": 1,
+&"heavy": 1
+}

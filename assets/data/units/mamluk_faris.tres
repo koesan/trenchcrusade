@@ -1,0 +1,55 @@
+[gd_resource type="Resource" script_class="UnitData" format=3 uid="uid://03h5ouk6ttxs"]
+
+[ext_resource type="Script" uid="uid://dse6je2a1x0hp" path="res://scripts/data/unit_data.gd" id="1"]
+[ext_resource type="Resource" path="res://assets/data/attacks/mamluk_jezzail.tres" id="2"]
+[ext_resource type="Resource" path="res://assets/data/attacks/mamluk_greatsword.tres" id="3"]
+[ext_resource type="Resource" path="res://assets/data/abilities/sworn_brethren.tres" id="4"]
+[ext_resource type="Resource" path="res://assets/data/abilities/martial_prowess.tres" id="5"]
+[ext_resource type="Resource" path="res://assets/data/abilities/automaton_destrier.tres" id="6"]
+[ext_resource type="Script" uid="uid://c71iu7y0m8hvf" path="res://scripts/data/loadout_option.gd" id="7"]
+[ext_resource type="Resource" path="res://assets/data/attacks/polearm.tres" id="8"]
+[ext_resource type="Resource" path="res://assets/data/attacks/sword_axe.tres" id="8_8yja7"]
+[ext_resource type="Resource" path="res://assets/data/attacks/pistol.tres" id="10"]
+[ext_resource type="Resource" path="res://assets/data/attacks/pistol_melee.tres" id="11"]
+
+[sub_resource type="Resource" id="Loadout1"]
+script = ExtResource("7")
+option_name_key = "MAMLUK_LOADOUT_POLEARM_SHIELD"
+attacks_override = Array[Resource]([ExtResource("2"), ExtResource("8")])
+armour_override = 3
+
+[sub_resource type="Resource" id="Loadout2"]
+script = ExtResource("7")
+option_name_key = "MAMLUK_LOADOUT_SWORD_PISTOL"
+attacks_override = Array[Resource]([ExtResource("8_8yja7"), ExtResource("10"), ExtResource("11")])
+armour_override = 2
+
+[sub_resource type="Resource" id="Loadout3"]
+script = ExtResource("7")
+option_name_key = "MAMLUK_LOADOUT_GREATSWORD"
+attacks_override = Array[Resource]([ExtResource("2"), ExtResource("3")])
+armour_override = 2
+
+[resource]
+script = ExtResource("1")
+unit_name = "Mamluk Faris"
+battlekit_rules = {
+"none": true
+}
+faction_id = &"iron_sultanate"
+cost = 4
+cost_currency = 1
+alignment = 1
+availability_max = 1
+armour = 2
+melee_dice_modifier = 1
+ranged_dice_modifier = 1
+model_scene_path = "res://assets/models/characters/Mamluk_Faris.glb"
+abilities = Array[Resource]([ExtResource("4"), ExtResource("5"), ExtResource("6")])
+attacks = Array[Resource]([ExtResource("2"), ExtResource("3")])
+loadout_options = Array[Resource]([SubResource("Loadout1"), SubResource("Loadout2"), SubResource("Loadout3")])
+keywords = {
+&"automaton_destrier": 1,
+&"ignore_offhand_weapon": 1,
+&"negate_shrapnel": 1
+}

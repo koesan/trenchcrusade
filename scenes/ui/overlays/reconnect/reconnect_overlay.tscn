@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/ui/overlays/reconnect/reconnect_overlay.gd" id="1_script"]
+[ext_resource type="Theme" path="res://assets/themes/gothic_theme.tres" id="2_theme"]
+
+[node name="ReconnectOverlay" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_theme")
+color = Color(0.0470588, 0.0352941, 0.0235294, 0.75)
+script = ExtResource("1_script")
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="Center"]
+custom_minimum_size = Vector2(400, 160)
+layout_mode = 2
+theme_type_variation = &"PanelIron"
+
+[node name="Margin" type="MarginContainer" parent="Center/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBox" type="VBoxContainer" parent="Center/Panel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Title" type="Label" parent="Center/Panel/Margin/VBox"]
+layout_mode = 2
+theme_type_variation = &"LabelTitle"
+text = "WAITING_RECONNECT"
+horizontal_alignment = 1
+
+[node name="SubTitle" type="Label" parent="Center/Panel/Margin/VBox"]
+layout_mode = 2
+theme_type_variation = &"LabelSubtitle"
+text = "WAITING_RECONNECT_SUB"
+horizontal_alignment = 1
+
+[node name="QuitBtn" type="Button" parent="Center/Panel/Margin/VBox"]
+layout_mode = 2
+theme_type_variation = &"ButtonDanger"
+text = "LEAVE_THE_BATTLEFIELD"

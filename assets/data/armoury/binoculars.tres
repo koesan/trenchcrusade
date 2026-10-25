@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="ArmouryItem" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/armoury_item.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+item_id = &"binoculars"
+name_key = "ARM_BINOCULARS"
+desc_key = "ARM_BINOCULARS_DESC"
+category = 5
+cost = 10
+cost_currency = 0
+limit_per_warband = 0
+elite_only = true
+required_unit_names = Array[String]([])
+required_keywords = Array[StringName]([])
+required_item_id = &""
+restriction_key = "ARM_RESTRICT_ELITE_ONLY"
+granted_attacks = Array[Resource]([])
+armour_value = 0
+granted_keywords = {
+&"binoculars": 1
+}
+hands = 0

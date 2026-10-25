@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6dicevlbl01"]
+
+[ext_resource type="Script" path="res://scenes/ui/hud/dice_bar/dice_value_label.gd" id="1_script"]
+
+[node name="DiceValueLabel" type="Label"]
+theme_type_variation = &"LabelDiceValue"
+text = "⚀"
+script = ExtResource("1_script")

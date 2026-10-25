@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="UnitData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/unit_data.gd" id="1"]
+[ext_resource type="Resource" path="res://assets/data/attacks/machine_gun.tres" id="3"]
+[ext_resource type="Resource" path="res://assets/data/attacks/greatsword_axe.tres" id="3_jceiy"]
+[ext_resource type="Resource" path="res://assets/data/abilities/infernal_brand.tres" id="4"]
+[ext_resource type="Script" path="res://scripts/data/loadout_option.gd" id="5"]
+[ext_resource type="Resource" path="res://assets/data/attacks/heavy_flamethrower.tres" id="6"]
+
+[sub_resource type="Resource" id="LO_STD"]
+script = ExtResource("5")
+option_name_key = "AHI_LOADOUT_HEAVY_STANDARD"
+
+[sub_resource type="Resource" id="LO_FLAMER"]
+script = ExtResource("5")
+option_name_key = "AHI_LOADOUT_HEAVY_FLAMER"
+attacks_override = Array[Resource]([ExtResource("3_jceiy"), ExtResource("6")])
+cost_delta = 5
+max_per_warband = 2
+
+[resource]
+script = ExtResource("1")
+unit_name = "Anointed Heavy Infantry"
+faction_id = &"heretic_legion"
+cost = 157
+kit_cost = 62
+availability_max = 5
+armour = 2
+melee_dice_modifier = 1
+ranged_dice_modifier = 1
+model_scene_path = "res://assets/models/characters/Anointed_Heavy_Infantry.glb"
+abilities = Array[Resource]([ExtResource("4")])
+attacks = Array[Resource]([ExtResource("3"), ExtResource("3_jceiy")])
+loadout_options = Array[Resource]([SubResource("LO_STD"), SubResource("LO_FLAMER")])
+keywords = {
+&"heretic": 1,
+&"negate_fire": 1,
+&"negate_heavy": 1,
+&"strong": 1
+}

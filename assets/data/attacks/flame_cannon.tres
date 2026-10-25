@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="AttackData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/attack_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+attack_name = "ATTACK_FLAME_CANNON"
+attack_range = 12.0
+description = "ATTACK_FLAME_CANNON_DESC"
+attack_type = "RANGED"
+hands = "1H"
+ignore_armour = true
+is_fire = true
+keywords = {
+&"heavy": 1,
+&"greek_fire": 1
+}

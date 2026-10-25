@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="UnitData" load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/unit_data.gd" id="1"]
+[ext_resource type="Resource" path="res://assets/data/attacks/sapper_shovel.tres" id="2"]
+[ext_resource type="Resource" path="res://assets/data/abilities/set_mine.tres" id="3"]
+[ext_resource type="Resource" path="res://assets/data/abilities/defuse_mine.tres" id="4"]
+[ext_resource type="Resource" path="res://assets/data/abilities/forward_positions.tres" id="5"]
+[ext_resource type="Resource" path="res://assets/data/abilities/fortify.tres" id="6"]
+[ext_resource type="Resource" path="res://assets/data/abilities/dug_in.tres" id="7"]
+[ext_resource type="Script" path="res://scripts/data/loadout_option.gd" id="8"]
+[ext_resource type="Resource" path="res://assets/data/attacks/alaybozan.tres" id="9"]
+
+[sub_resource type="Resource" id="LO_STD"]
+script = ExtResource("8")
+option_name_key = "SAPPER_LOADOUT_STANDARD"
+
+[sub_resource type="Resource" id="LO_ALAYBOZAN"]
+script = ExtResource("8")
+option_name_key = "SAPPER_LOADOUT_ALAYBOZAN"
+cost_delta = 9
+attacks_override = Array[Resource]([ExtResource("2"), ExtResource("9")])
+
+[resource]
+script = ExtResource("1")
+unit_name = "Sultanate Sapper"
+faction_id = &"iron_sultanate"
+cost = 50
+availability_max = 2
+movement_range = 6.0
+speed = 6.0
+armour = 0
+melee_dice_modifier = 0
+ranged_dice_modifier = 1
+model_scene_path = "res://assets/models/characters/Sultanate_Sapper.glb"
+attacks = [ExtResource("2")]
+loadout_options = Array[Resource]([SubResource("LO_STD"), SubResource("LO_ALAYBOZAN")])
+abilities = [ExtResource("3"), ExtResource("4"), ExtResource("5"), ExtResource("6"), ExtResource("7")]
+keywords = {
+&"negate_mined": 1,
+&"forward_positions": 1,
+&"sultanate": 1,
+&"dug_in": 1
+}

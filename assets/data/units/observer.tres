@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="UnitData" load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/unit_data.gd" id="1"]
+[ext_resource type="Resource" path="res://assets/data/attacks/polearm_lightning_speed.tres" id="2"]
+[ext_resource type="Resource" path="res://assets/data/abilities/lightning_speed.tres" id="3"]
+[ext_resource type="Resource" path="res://assets/data/abilities/temporal_fuge.tres" id="4"]
+[ext_resource type="Resource" path="res://assets/data/abilities/eye_of_god.tres" id="5"]
+[ext_resource type="Resource" path="res://assets/data/abilities/voice_of_god.tres" id="6"]
+
+[resource]
+script = ExtResource("1")
+unit_name = "Observer"
+battlekit_rules = {
+"none": true
+}
+faction_id = &"new_antioch"
+cost = 3
+cost_currency = 1
+alignment = 1
+availability_max = 1
+movement_range = 8.0
+speed = 8.0
+armour = 1
+melee_dice_modifier = 2
+ranged_dice_modifier = 1
+model_scene_path = "res://assets/models/characters/Observer.glb"
+attacks = [ExtResource("2")]
+abilities = [ExtResource("3"), ExtResource("4"), ExtResource("5"), ExtResource("6")]
+keywords = {
+&"injury_modifier": -1,
+&"target_success_penalty": -1,
+&"eye_of_god": 1,
+&"negate_gas": 1,
+&"negate_shrapnel": 1
+}

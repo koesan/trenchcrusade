@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="AttackData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/attack_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+attack_name = "ATTACK_ANTI_MATERIEL_RIFLE"
+attack_range = 36.0
+description = "ATTACK_ANTI_MATERIEL_RIFLE_DESC"
+attack_type = "RANGED"
+hands = "2H"
+ignore_armour = true
+injury_dice_modifier = 1
+keywords = {
+&"critical": 1,
+&"heavy": 1
+}

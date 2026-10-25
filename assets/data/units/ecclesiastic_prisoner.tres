@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="UnitData" load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/unit_data.gd" id="1"]
+[ext_resource type="Resource" path="res://assets/data/attacks/feeble_flailing.tres" id="2"]
+[ext_resource type="Resource" path="res://assets/data/abilities/trigger_martyrdom_device.tres" id="3"]
+[ext_resource type="Resource" path="res://assets/data/abilities/awaited.tres" id="4"]
+[ext_resource type="Resource" path="res://assets/data/abilities/mad_dash.tres" id="5"]
+[ext_resource type="Resource" path="res://assets/data/abilities/iron_capirote.tres" id="6"]
+[ext_resource type="Script" path="res://scripts/data/loadout_option.gd" id="7"]
+
+[sub_resource type="Resource" id="Loadout1"]
+script = ExtResource("7")
+option_name_key = "EP_LOADOUT_STANDARD"
+
+[sub_resource type="Resource" id="Loadout2"]
+script = ExtResource("7")
+option_name_key = "EP_LOADOUT_MARTYRDOM_DEVICE"
+cost_delta = 35
+max_per_warband = 4
+extra_keywords = {
+&"awaited": 1
+}
+extra_abilities = Array[Resource]([ExtResource("3"), ExtResource("4")])
+
+[resource]
+script = ExtResource("1")
+unit_name = "Ecclesiastic Prisoner"
+battlekit_rules = {
+"none": true
+}
+faction_id = &"trench_pilgrims"
+cost = 20
+availability_max = 999
+movement_range = 6.0
+speed = 6.0
+armour = 0
+melee_dice_modifier = -1
+ranged_dice_modifier = 0
+model_scene_path = "res://assets/models/characters/Ecclesiastic_Prisoner.glb"
+attacks = [ExtResource("2")]
+abilities = [ExtResource("5"), ExtResource("6")]
+loadout_options = Array[Resource]([SubResource("Loadout1"), SubResource("Loadout2")])
+keywords = {
+&"pilgrim": 1,
+&"dash_dice_bonus": 1,
+&"negate_shrapnel": 1,
+&"negate_fear": 1
+}

@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="ArmouryItem" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/armoury_item.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+item_id = &"iron_capirote"
+name_key = "ARM_IRON_CAPIROTE"
+desc_key = "ARM_IRON_CAPIROTE_DESC"
+category = 5
+cost = 7
+cost_currency = 0
+limit_per_warband = 0
+elite_only = false
+required_unit_names = Array[String]([])
+required_keywords = Array[StringName]([])
+required_item_id = &""
+is_headgear = true
+restriction_key = ""
+granted_attacks = Array[Resource]([])
+armour_value = 0
+granted_keywords = {
+&"negate_shrapnel": 1,
+&"negate_fear": 1
+}
+hands = 0

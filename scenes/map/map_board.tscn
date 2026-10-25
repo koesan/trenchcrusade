@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/map/map_board.gd" id="1_board"]
+[ext_resource type="PackedScene" path="res://assets/models/map/map.glb" id="2_glb"]
+
+[node name="MapBoard" type="Node3D"]
+script = ExtResource("1_board")
+
+[node name="map" parent="." instance=ExtResource("2_glb")]

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+<defs><linearGradient id="gilt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4e2b4"/><stop offset="0.45" stop-color="#d2ae6c"/><stop offset="1" stop-color="#8c6c3a"/></linearGradient></defs>
+<g transform="translate(0 1.6)" opacity="0.85"><g fill="#0b0908"><path d="M15 32c0-11 4-22 9.5-22S33 19 33 30s-3.4 12-8.5 12S15 39 15 32z"/>
+<path d="M16 45h15v5c0 4.5-3.2 7-7.5 7S16 54.5 16 50z"/>
+<path d="M33 24c0-11 4-20 9.5-20S51 13 51 24s-3.4 11-8.5 11S33 31 33 24z" opacity=".55"/>
+<path d="M34 38h15v4.5c0 4.5-3.2 7-7.5 7S34 47 34 42.5z" opacity=".55"/></g></g>
+<g><g fill="url(#gilt)"><path d="M15 32c0-11 4-22 9.5-22S33 19 33 30s-3.4 12-8.5 12S15 39 15 32z"/>
+<path d="M16 45h15v5c0 4.5-3.2 7-7.5 7S16 54.5 16 50z"/>
+<path d="M33 24c0-11 4-20 9.5-20S51 13 51 24s-3.4 11-8.5 11S33 31 33 24z" opacity=".55"/>
+<path d="M34 38h15v4.5c0 4.5-3.2 7-7.5 7S34 47 34 42.5z" opacity=".55"/></g></g>
+</svg>

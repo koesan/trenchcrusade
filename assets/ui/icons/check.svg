@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+<defs><linearGradient id="gilt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4e2b4"/><stop offset="0.45" stop-color="#d2ae6c"/><stop offset="1" stop-color="#8c6c3a"/></linearGradient></defs>
+<g transform="translate(0 1.6)" opacity="0.85"><path fill="#0b0908" d="M6 34 L14 26 L26 38 L52 12 L60 20 L26 54Z"/></g>
+<g><path fill="url(#gilt)" d="M6 34 L14 26 L26 38 L52 12 L60 20 L26 54Z"/></g>
+</svg>

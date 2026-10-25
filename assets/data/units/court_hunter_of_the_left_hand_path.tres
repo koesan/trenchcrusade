@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="UnitData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/unit_data.gd" id="1"]
+[ext_resource type="Resource" path="res://assets/data/attacks/bow_of_lethe.tres" id="2"]
+[ext_resource type="Resource" path="res://assets/data/abilities/shadow_step.tres" id="3"]
+[ext_resource type="Resource" path="res://assets/data/abilities/left_hand_path.tres" id="4"]
+[ext_resource type="Resource" path="res://assets/data/abilities/oracle_beast_cloak.tres" id="5"]
+[ext_resource type="Script" path="res://scripts/data/loadout_option.gd" id="6"]
+[ext_resource type="Resource" path="res://assets/data/attacks/sword_axe.tres" id="6_57aie"]
+
+[sub_resource type="Resource" id="LO_STD"]
+script = ExtResource("6")
+option_name_key = "HUNTER_LOADOUT_STANDARD"
+
+[sub_resource type="Resource" id="LO_BLADE"]
+script = ExtResource("6")
+option_name_key = "HUNTER_LOADOUT_BLADE"
+attacks_override = Array[Resource]([ExtResource("2"), ExtResource("6_57aie")])
+cost_delta = 4
+max_per_warband = 2
+
+[resource]
+script = ExtResource("1")
+unit_name = "Hunter of the Left Hand Path"
+battlekit_rules = {
+"melee_hand_budget": 1
+}
+faction_id = &"court_of_seven_headed_serpent"
+cost = 110
+availability_max = 1
+melee_dice_modifier = 1
+ranged_dice_modifier = 2
+model_scene_path = "res://assets/models/characters/Hunter_of_the_Left_Hand_Path.glb"
+abilities = Array[Resource]([ExtResource("3"), ExtResource("4"), ExtResource("5")])
+attacks = Array[Resource]([ExtResource("2")])
+loadout_options = Array[Resource]([SubResource("LO_STD"), SubResource("LO_BLADE")])
+keywords = {
+&"demonic": 1,
+&"elite": 1,
+&"infiltrator": 1,
+&"negate_fire": 1,
+&"oracle_beast_cloak": 1,
+&"the_court": 1
+}

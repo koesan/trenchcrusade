@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="UnitData" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/unit_data.gd" id="1"]
+[ext_resource type="Resource" path="res://assets/data/attacks/infernal_bomb.tres" id="2"]
+[ext_resource type="Resource" path="res://assets/data/abilities/levitate.tres" id="3"]
+[ext_resource type="Resource" path="res://assets/data/abilities/abiotic_life.tres" id="4"]
+
+[resource]
+script = ExtResource("1")
+unit_name = "Artillery Witch"
+battlekit_rules = {
+"categories": [0, 3, 4, 5]
+}
+faction_id = &"heretic_legion"
+cost = 100
+availability_max = 1
+movement_range = 6.0
+speed = 6.0
+armour = 0
+melee_dice_modifier = -1
+ranged_dice_modifier = 0
+model_scene_path = "res://assets/models/characters/Artillery_Witch.glb"
+attacks = [ExtResource("2")]
+abilities = [ExtResource("3"), ExtResource("4")]
+keywords = {
+&"negate_gas": 1,
+&"negate_fear": 1,
+&"artificial": 1,
+&"heretic": 1,
+&"abiotic_life": 1,
+&"levitate": 1
+}

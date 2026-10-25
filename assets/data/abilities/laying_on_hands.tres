@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="AbilityData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/ability_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+ability_id = &"laying_on_hands"
+display_name = "LAYING_ON_HANDS"
+description = "LAYING_ON_HANDS_DESC"
+action_key = "laying_on_hands"
+is_risky = false
+requires_not_engaged = false
+requires_engaged = false
+requires_standing = true
+requires_roll = true
+success_threshold = 7
+dice_modifier = 0
+target_type = "friendly"
+range_meters = 6.0
+target_must_be_alive = true
+target_same_faction = true
+effect_type = "remove_blood"
+effect_amount = 1
+crit_amount = 3

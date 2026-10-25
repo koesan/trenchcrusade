@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="UnitData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/unit_data.gd" id="1"]
+[ext_resource type="Resource" path="res://assets/data/attacks/plague_blade.tres" id="2"]
+[ext_resource type="Resource" path="res://assets/data/abilities/parasite_host.tres" id="3"]
+[ext_resource type="Resource" path="res://assets/data/abilities/black_grail_bodyguard.tres" id="4"]
+[ext_resource type="Script" path="res://scripts/data/loadout_option.gd" id="5"]
+[ext_resource type="Resource" path="res://assets/data/attacks/infested_rifle.tres" id="6"]
+
+[sub_resource type="Resource" id="LO_STD"]
+script = ExtResource("5")
+option_name_key = "CORPSE_GUARD_LOADOUT_STANDARD"
+
+[sub_resource type="Resource" id="LO_INFESTED"]
+script = ExtResource("5")
+option_name_key = "CORPSE_GUARD_LOADOUT_INFESTED"
+attacks_override = Array[Resource]([ExtResource("2"), ExtResource("6")])
+cost_delta = 15
+
+[resource]
+script = ExtResource("1")
+unit_name = "Corpse Guard"
+faction_id = &"cult_of_the_black_grail"
+cost = 62
+kit_cost = 7
+availability_max = 3
+melee_dice_modifier = 1
+model_scene_path = "res://assets/models/characters/Corpse_Guard.glb"
+has_undead_fortitude = true
+has_fear = true
+abilities = Array[Resource]([ExtResource("3"), ExtResource("4")])
+attacks = Array[Resource]([ExtResource("2")])
+loadout_options = Array[Resource]([SubResource("LO_STD"), SubResource("LO_INFESTED")])
+keywords = {
+&"black_grail": 1,
+&"black_grail_bodyguard": 1,
+&"elite": 1,
+&"negate_gas": 1,
+&"parasite_host": 1
+}

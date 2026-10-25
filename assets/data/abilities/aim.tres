@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="AbilityData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/ability_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+ability_id = &"aim"
+display_name = "AIM"
+description = "AIM_DESC"
+action_key = "aim"
+is_risky = true
+requires_not_engaged = false
+requires_engaged = false
+requires_standing = true
+requires_roll = true
+success_threshold = 7
+dice_modifier = 2
+target_type = "self"
+range_meters = 0.0
+target_must_be_alive = true
+target_same_faction = true
+effect_type = "buff_dice"
+effect_amount = 2
+crit_amount = 0
+buff_is_melee = false
+buff_also_ranged = false

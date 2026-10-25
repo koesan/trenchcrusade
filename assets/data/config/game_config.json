@@ -1,0 +1,20 @@
+{
+    "_notes": "Oyun denge + zamanlama ayarlarinin TEK KAYNAGI. Degistir + kaydet -> yeniden derleme gerekmez. Bilinmeyen/typo anahtar loglanir ve yok sayilir. Gorsel RENKLER burada degil: GameVisualColors .tres kaynaginda (Inspector) duzenlenir. points_budget / max_units_per_player editor-tunable (game sahnesi @export).",
+    "balance": {
+        "engage_range": 2.2,
+        "attack_range_tolerance": 1.2,
+        "charge_reach_tolerance": 1.2,
+        "nav_agent_max_climb": 0.8,
+        "vertical_step_max": 0.8,
+        "climb_free_max": 3.0,
+        "diving_charge_min_height": 3.0,
+        "nav_move_tolerance": 2.5,
+        "aura_range": 8.0,
+        "time_slip_radius": 6.0,
+        "charge_distance_cap": 12.0
+    },
+    "timing": {
+        "dice_watchdog_seconds": 3.0,
+        "dice_hold_seconds": 4.5
+    }
+}

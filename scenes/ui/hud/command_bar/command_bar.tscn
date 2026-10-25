@@ -1,0 +1,144 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scenes/ui/hud/command_bar/command_bar.gd" id="1_script"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud/action_panel/action_buttons_panel.tscn" id="2_actions"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud/command_bar/stat_cell.tscn" id="3_stat"]
+[ext_resource type="Texture2D" path="res://assets/ui/ornaments/divider_wire.svg" id="4_wire"]
+
+[node name="CommandBar" type="PanelContainer"]
+custom_minimum_size = Vector2(1040, 176)
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_type_variation = &"PanelCommand"
+script = ExtResource("1_script")
+
+[node name="Row" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Portrait" type="Button" parent="Row"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(94, 128)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+toggle_mode = true
+button_pressed = true
+theme_type_variation = &"ButtonNiche"
+
+[node name="PreviewSlot" type="CenterContainer" parent="Row/Portrait"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 18.0
+offset_bottom = -5.0
+mouse_filter = 2
+
+[node name="Info" type="VBoxContainer" parent="Row"]
+unique_name_in_owner = true
+clip_contents = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_constants/separation = 1
+
+[node name="Name" type="Label" parent="Row/Info"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_type_variation = &"LabelTitle"
+theme_override_font_sizes/font_size = 19
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="SubRow" type="HBoxContainer" parent="Row/Info"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="Sub" type="Label" parent="Row/Info/SubRow"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_type_variation = &"LabelMuted"
+theme_override_font_sizes/font_size = 13
+
+[node name="Status" type="HBoxContainer" parent="Row/Info/SubRow"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="Wire" type="TextureRect" parent="Row/Info"]
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("4_wire")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="Stats" type="HBoxContainer" parent="Row/Info"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 4
+
+[node name="Move" parent="Row/Info/Stats" instance=ExtResource("3_stat")]
+layout_mode = 2
+
+[node name="Ranged" parent="Row/Info/Stats" instance=ExtResource("3_stat")]
+layout_mode = 2
+
+[node name="Melee" parent="Row/Info/Stats" instance=ExtResource("3_stat")]
+layout_mode = 2
+
+[node name="Armour" parent="Row/Info/Stats" instance=ExtResource("3_stat")]
+layout_mode = 2
+
+[node name="TraitsClip" type="Control" parent="Row/Info"]
+clip_contents = true
+custom_minimum_size = Vector2(300, 22)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Traits" type="HBoxContainer" parent="Row/Info/TraitsClip"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 22.0
+theme_override_constants/separation = 8
+
+[node name="Sep" type="VSeparator" parent="Row"]
+layout_mode = 2
+
+[node name="ActionsCol" type="VBoxContainer" parent="Row"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="ActionsScroll" type="ScrollContainer" parent="Row/ActionsCol"]
+custom_minimum_size = Vector2(0, 132)
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="Actions" parent="Row/ActionsCol/ActionsScroll" instance=ExtResource("2_actions")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="TargetHint" type="RichTextLabel" parent="Row/ActionsCol"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.69, 0.57, 0.39, 1)
+theme_override_font_sizes/normal_font_size = 13
+bbcode_enabled = true
+scroll_active = false
+autowrap_mode = 0

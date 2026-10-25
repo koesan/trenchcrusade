@@ -1,0 +1,252 @@
+[gd_scene format=3 uid="uid://ckjb1jf46quko"]
+
+[ext_resource type="Script" uid="uid://dptokytdocad4" path="res://scenes/ui/main_menu/main_menu.gd" id="1_menu"]
+[ext_resource type="Texture2D" uid="uid://c3gqs12br4j4o" path="res://assets/textures/ui/menu_backgrounds/lobby_bg_01.jpg" id="2_bg"]
+[ext_resource type="Texture2D" uid="uid://btahpu615ucfk" path="res://assets/textures/menu_logo.webp" id="3_logo"]
+[ext_resource type="Theme" path="res://assets/themes/gothic_theme.tres" id="4_theme"]
+[ext_resource type="Texture2D" uid="uid://by50k6dgssbqs" path="res://assets/textures/ui/vignette_overlay.png" id="5_vignette"]
+[ext_resource type="PackedScene" path="res://scenes/ui/overlays/settings/settings_overlay.tscn" id="14_settings_overlay"]
+[ext_resource type="PackedScene" path="res://scenes/ui/main_menu/lobby_panel.tscn" id="15_lobby_panel"]
+[ext_resource type="PackedScene" path="res://scenes/ui/overlays/loading/loading_overlay.tscn" id="16_loading_overlay"]
+
+[sub_resource type="Gradient" id="MenuScrimGradient"]
+offsets = PackedFloat32Array(0, 0.34, 0.62, 1)
+colors = PackedColorArray(0.03, 0.025, 0.02, 0.93, 0.03, 0.025, 0.02, 0.78, 0.03, 0.025, 0.02, 0.3, 0.03, 0.025, 0.02, 0.38)
+
+[sub_resource type="GradientTexture2D" id="MenuScrim"]
+gradient = SubResource("MenuScrimGradient")
+width = 512
+height = 8
+
+[node name="MainMenu" type="Control" unique_id=686179118]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_theme")
+script = ExtResource("1_menu")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1927567496]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_theme")
+texture = ExtResource("2_bg")
+expand_mode = 1
+
+[node name="Tint" type="TextureRect" parent="." unique_id=1503885024]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("4_theme")
+texture = SubResource("MenuScrim")
+expand_mode = 1
+
+[node name="Margin" type="MarginContainer" parent="." unique_id=867213040]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_theme")
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 40
+
+[node name="HBox" type="HBoxContainer" parent="Margin" unique_id=1294496586]
+layout_mode = 2
+theme = ExtResource("4_theme")
+theme_override_constants/separation = 40
+
+[node name="LeftColumn" type="VBoxContainer" parent="Margin/HBox" unique_id=816312359]
+custom_minimum_size = Vector2(380, 0)
+layout_mode = 2
+theme = ExtResource("4_theme")
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="LogoMark" type="HBoxContainer" parent="Margin/HBox/LeftColumn" unique_id=854582812]
+layout_mode = 2
+theme = ExtResource("4_theme")
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="LineLeft" type="ColorRect" parent="Margin/HBox/LeftColumn/LogoMark" unique_id=1711754439]
+custom_minimum_size = Vector2(30, 2)
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("4_theme")
+color = Color(0.43, 0.34, 0.215, 1)
+
+[node name="Cross" type="Label" parent="Margin/HBox/LeftColumn/LogoMark" unique_id=1208931269]
+layout_mode = 2
+theme = ExtResource("4_theme")
+theme_type_variation = &"LabelTitleLarge"
+theme_override_colors/font_color = Color(0.63, 0.14, 0.11, 1)
+theme_override_font_sizes/font_size = 24
+text = "✝"
+horizontal_alignment = 1
+
+[node name="LineRight" type="ColorRect" parent="Margin/HBox/LeftColumn/LogoMark" unique_id=546290477]
+custom_minimum_size = Vector2(30, 2)
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("4_theme")
+color = Color(0.43, 0.34, 0.215, 1)
+
+[node name="YearLabel" type="Label" parent="Margin/HBox/LeftColumn" unique_id=1090188505]
+layout_mode = 2
+theme = ExtResource("4_theme")
+theme_type_variation = &"LabelDarkGold"
+theme_override_colors/font_color = Color(0.7882353, 0.63529414, 0.15294118, 1)
+theme_override_font_sizes/font_size = 12
+text = "ANNO DOMINI · MCMXVII"
+horizontal_alignment = 1
+
+[node name="LogoRect" type="TextureRect" parent="Margin/HBox/LeftColumn" unique_id=511485203]
+custom_minimum_size = Vector2(300, 75)
+layout_mode = 2
+theme = ExtResource("4_theme")
+texture = ExtResource("3_logo")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="QuoteLabel" type="Label" parent="Margin/HBox/LeftColumn" unique_id=2111759118]
+custom_minimum_size = Vector2(250, 0)
+custom_minimum_size = Vector2(0, 66)
+layout_mode = 2
+theme = ExtResource("4_theme")
+theme_type_variation = &"LabelParchmentTan"
+theme_override_colors/font_color = Color(0.7882353, 0.63529414, 0.15294118, 1)
+theme_override_font_sizes/font_size = 14
+text = "\"In the trenches of the damned, faith is both shield and sword. Advance, soldier of the Divine Covenant.\""
+horizontal_alignment = 1
+autowrap_mode = 3
+vertical_alignment = 1
+max_lines_visible = 3
+
+[node name="Divider" type="HSeparator" parent="Margin/HBox/LeftColumn" unique_id=378600740]
+layout_mode = 2
+theme = ExtResource("4_theme")
+
+[node name="MenuButtons" type="VBoxContainer" parent="Margin/HBox/LeftColumn" unique_id=2138110367]
+layout_mode = 2
+theme = ExtResource("4_theme")
+theme_override_constants/separation = 4
+
+[node name="ContinueButton" type="Button" parent="Margin/HBox/LeftColumn/MenuButtons" unique_id=1837502183]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme = ExtResource("4_theme")
+theme_type_variation = &"ButtonSecondary"
+theme_override_font_sizes/font_size = 20
+text = "CONTINUE THE PILGRIMAGE"
+
+[node name="PlayButton" type="Button" parent="Margin/HBox/LeftColumn/MenuButtons" unique_id=437932830]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme = ExtResource("4_theme")
+theme_type_variation = &"ButtonPrimary"
+theme_override_font_sizes/font_size = 20
+text = "ENTER THE CRUSADE"
+
+[node name="MultiplayerButton" type="Button" parent="Margin/HBox/LeftColumn/MenuButtons" unique_id=1514159158]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme = ExtResource("4_theme")
+theme_type_variation = &"ButtonSecondary"
+theme_override_font_sizes/font_size = 20
+text = "HOLY CAMPAIGN"
+
+[node name="SettingsButton" type="Button" parent="Margin/HBox/LeftColumn/MenuButtons" unique_id=1475492171]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme = ExtResource("4_theme")
+theme_type_variation = &"ButtonSecondary"
+theme_override_font_sizes/font_size = 20
+text = "ORDINANCES"
+
+[node name="QuitButton" type="Button" parent="Margin/HBox/LeftColumn/MenuButtons" unique_id=1500336830]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme = ExtResource("4_theme")
+theme_type_variation = &"ButtonGhost"
+theme_override_font_sizes/font_size = 20
+text = "LEAVE THE BATTLEFIELD"
+
+[node name="FooterDivider" type="HSeparator" parent="Margin/HBox/LeftColumn" unique_id=1554652068]
+layout_mode = 2
+theme = ExtResource("4_theme")
+
+[node name="FooterHBox" type="HBoxContainer" parent="Margin/HBox/LeftColumn" unique_id=1065855848]
+layout_mode = 2
+theme = ExtResource("4_theme")
+alignment = 1
+
+[node name="VersionLabel" type="Label" parent="Margin/HBox/LeftColumn/FooterHBox" unique_id=1459523279]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_theme")
+theme_type_variation = &"LabelMutedBrown"
+theme_override_colors/font_color = Color(0.7882353, 0.63529414, 0.15294118, 1)
+theme_override_font_sizes/font_size = 12
+text = "VERSION 1.0.0"
+
+[node name="CopyrightLabel" type="Label" parent="Margin/HBox/LeftColumn/FooterHBox" unique_id=357540602]
+layout_mode = 2
+theme = ExtResource("4_theme")
+theme_type_variation = &"LabelMutedBrown"
+theme_override_colors/font_color = Color(0.7882353, 0.63529414, 0.15294118, 1)
+theme_override_font_sizes/font_size = 12
+text = "© COVENANT STUDIOS MMXVII"
+horizontal_alignment = 2
+
+[node name="Spacer" type="Control" parent="Margin/HBox" unique_id=1773651415]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_theme")
+
+[node name="RightColumn" type="CenterContainer" parent="Margin/HBox" unique_id=275637826]
+custom_minimum_size = Vector2(460, 540)
+layout_mode = 2
+theme = ExtResource("4_theme")
+
+[node name="LobbyPanel" parent="Margin/HBox/RightColumn" instance=ExtResource("15_lobby_panel")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="SettingsPanel" parent="Margin/HBox/RightColumn" instance=ExtResource("14_settings_overlay")]
+unique_name_in_owner = true
+visible = false
+
+[node name="__vignette" type="TextureRect" parent="." unique_id=418822738]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("4_theme")
+texture = ExtResource("5_vignette")
+expand_mode = 1
+
+[connection signal="pressed" from="Margin/HBox/LeftColumn/MenuButtons/ContinueButton" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Margin/HBox/LeftColumn/MenuButtons/PlayButton" to="." method="_on_local_pressed"]
+[connection signal="pressed" from="Margin/HBox/LeftColumn/MenuButtons/MultiplayerButton" to="." method="_on_multiplayer_pressed"]
+[connection signal="pressed" from="Margin/HBox/LeftColumn/MenuButtons/SettingsButton" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Margin/HBox/LeftColumn/MenuButtons/QuitButton" to="." method="_on_quit_pressed"]
+
+

@@ -1,0 +1,64 @@
+[gd_resource type="Resource" script_class="ScenarioData" load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/scenario_data.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/scenario_objective.gd" id="2"]
+[ext_resource type="Script" path="res://scripts/rules/scenarios/the_high_ground.gd" id="3"]
+[ext_resource type="Texture2D" path="res://assets/textures/ui/menu_backgrounds/lobby_bg_04.jpg" id="banner_art"]
+
+[sub_resource type="Resource" id="Obj1"]
+script = ExtResource("2")
+objective_id = &"hg_1"
+label_key = "OBJECTIVE_ALPHA"
+position = Vector3(0, 0, -8)
+control_radius = 1.0
+vp_per_turn = 2
+
+[sub_resource type="Resource" id="Obj2"]
+script = ExtResource("2")
+objective_id = &"hg_2"
+label_key = "OBJECTIVE_BETA"
+position = Vector3(0, 0, -4)
+control_radius = 1.0
+vp_per_turn = 2
+
+[sub_resource type="Resource" id="Obj3"]
+script = ExtResource("2")
+objective_id = &"hg_3"
+label_key = "OBJECTIVE_GAMMA"
+position = Vector3(0, 0, 0)
+control_radius = 1.0
+vp_per_turn = 2
+
+[sub_resource type="Resource" id="Obj4"]
+script = ExtResource("2")
+objective_id = &"hg_4"
+label_key = "OBJECTIVE_DELTA"
+position = Vector3(0, 0, 4)
+control_radius = 1.0
+vp_per_turn = 2
+
+[sub_resource type="Resource" id="Obj5"]
+script = ExtResource("2")
+objective_id = &"hg_5"
+label_key = "OBJECTIVE_EPSILON"
+position = Vector3(0, 0, 8)
+control_radius = 1.0
+vp_per_turn = 2
+
+[resource]
+script = ExtResource("1")
+scenario_id = &"the_high_ground"
+scenario_name_key = "SCENARIO_HIGH_GROUND_NAME"
+scenario_desc_key = "SCENARIO_HIGH_GROUND_DESC"
+banner = ExtResource("banner_art")
+turn_limit = 5
+points_budget = 700
+glory_budget = 10
+infiltrators_allowed = true
+p1_deploy_zone = Rect2(-40, -40, 38, 80)
+p2_deploy_zone = Rect2(2, -40, 38, 80)
+victory_type = 1
+objectives = [SubResource("Obj1"), SubResource("Obj2"), SubResource("Obj3"), SubResource("Obj4"), SubResource("Obj5")]
+logic_script = ExtResource("3")
+special_rules = {}
+terrain_placements = Array[Resource]([])

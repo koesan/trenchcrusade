@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="AttackData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/attack_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+attack_name = "ATTACK_BLASPHEMOUS_STAFF"
+attack_range = 1.0
+description = "ATTACK_BLASPHEMOUS_STAFF_DESC"
+attack_type = "MELEE"
+hands = "1H"
+is_fire = true
+keywords = {
+&"critical": 1,
+&"evil_power": 1
+}

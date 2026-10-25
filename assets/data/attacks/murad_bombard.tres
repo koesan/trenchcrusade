@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="AttackData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/attack_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+attack_name = "ATTACK_MURAD_BOMBARD"
+attack_range = 36.0
+description = "ATTACK_MURAD_BOMBARD_DESC"
+attack_type = "RANGED"
+hands = "1H"
+is_blast = true
+blast_radius = 3.0
+keywords = {
+&"scatter": 1,
+&"heavy": 1,
+&"echoing_blast": 1
+}

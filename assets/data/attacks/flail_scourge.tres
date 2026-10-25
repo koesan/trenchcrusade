@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AttackData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/attack_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+attack_name = "ATTACK_FLAIL_SCOURGE"
+attack_range = 1.0
+description = "ATTACK_FLAIL_SCOURGE_DESC"
+attack_type = "MELEE"
+hands = "1H"
+dice_modifier = 1
+keywords = {
+&"unwieldy": 1
+}

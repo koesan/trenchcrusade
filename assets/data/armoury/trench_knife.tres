@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="ArmouryItem" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/armoury_item.gd" id="1"]
+[ext_resource type="Resource" path="res://assets/data/attacks/trench_knife.tres" id="2"]
+
+[resource]
+script = ExtResource("1")
+item_id = &"trench_knife"
+name_key = "ATTACK_TRENCH_KNIFE"
+desc_key = "ATTACK_TRENCH_KNIFE_DESC"
+category = 0
+cost = 1
+cost_currency = 0
+limit_per_warband = 0
+elite_only = false
+required_unit_names = Array[String]([])
+required_keywords = Array[StringName]([])
+required_item_id = &""
+restriction_key = ""
+granted_attacks = Array[Resource]([ExtResource("2")])
+armour_value = 0
+granted_keywords = {
+
+}
+hands = 1

@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="UnitData" load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/unit_data.gd" id="1"]
+[ext_resource type="Resource" path="res://assets/data/attacks/iron_clawed_hands_attack.tres" id="2"]
+[ext_resource type="Resource" path="res://assets/data/abilities/goetic_portal.tres" id="3"]
+[ext_resource type="Resource" path="res://assets/data/abilities/barbed_embrace.tres" id="4"]
+[ext_resource type="Resource" path="res://assets/data/abilities/iron_clawed_hands.tres" id="5"]
+[ext_resource type="Resource" path="res://assets/data/abilities/goetic_gaze.tres" id="6"]
+
+[resource]
+script = ExtResource("1")
+unit_name = "Goetic Warlock"
+battlekit_rules = {
+"none": true
+}
+faction_id = &"heretic_legion"
+cost = 4
+cost_currency = 1
+alignment = 2
+availability_max = 1
+movement_range = 6.0
+speed = 6.0
+armour = 2
+melee_dice_modifier = 1
+ranged_dice_modifier = 1
+model_scene_path = "res://assets/models/characters/Goetic_Warlock.glb"
+attacks = [ExtResource("2")]
+abilities = [ExtResource("3"), ExtResource("4"), ExtResource("5"), ExtResource("6")]
+has_fear = true
+keywords = {
+&"negate_fire": 1,
+&"demonic": 1,
+&"artificial": 1,
+&"barbed_embrace": 1
+}

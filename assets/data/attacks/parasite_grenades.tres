@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="AttackData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/attack_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+attack_name = "ATTACK_PARASITE_GRENADES"
+attack_range = 8.0
+description = "ATTACK_PARASITE_GRENADES_DESC"
+attack_type = "RANGED"
+hands = "1H"
+is_assault = true
+ignore_cover = true
+keywords = {
+&"ignore_long_range": 1,
+&"terrifying_hallucinations": 1,
+&"grenade": 1
+}

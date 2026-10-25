@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wall_x"]
+size = Vector3(0.5, 5, 12)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wall_z"]
+size = Vector3(12, 5, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ceiling"]
+size = Vector3(12, 0.5, 12)
+
+[node name="DiceTray" type="StaticBody3D"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="WallLeft" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 2.5, 0)
+shape = SubResource("BoxShape3D_wall_x")
+
+[node name="WallRight" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2.5, 0)
+shape = SubResource("BoxShape3D_wall_x")
+
+[node name="WallForward" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -6)
+shape = SubResource("BoxShape3D_wall_z")
+
+[node name="WallBackward" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 6)
+shape = SubResource("BoxShape3D_wall_z")
+
+[node name="Ceiling" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+shape = SubResource("BoxShape3D_ceiling")

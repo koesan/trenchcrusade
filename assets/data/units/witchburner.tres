@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="UnitData" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/unit_data.gd" id="1"]
+[ext_resource type="Resource" path="res://assets/data/attacks/gavel_of_justice.tres" id="2"]
+[ext_resource type="Resource" path="res://assets/data/abilities/divine_judgement.tres" id="3"]
+[ext_resource type="Resource" path="res://assets/data/abilities/dignified_conduct.tres" id="4"]
+
+[resource]
+script = ExtResource("1")
+unit_name = "Witchburner"
+battlekit_rules = {
+"none": true
+}
+faction_id = &"trench_pilgrims"
+cost = 5
+cost_currency = 1
+alignment = 1
+availability_max = 1
+movement_range = 6.0
+speed = 6.0
+armour = 2
+melee_dice_modifier = 1
+ranged_dice_modifier = 0
+model_scene_path = "res://assets/models/characters/Witchburner.glb"
+attacks = [ExtResource("2")]
+abilities = [ExtResource("3"), ExtResource("4")]
+keywords = {
+&"negate_fear": 1,
+&"elite": 1,
+&"dignified_conduct": 1,
+&"negate_shrapnel": 1
+}
+

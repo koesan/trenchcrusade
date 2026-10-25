@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="AttackData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/attack_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+attack_name = "ATTACK_ANTI_TANK_HAMMER"
+attack_range = 1.0
+description = "ATTACK_ANTI_TANK_HAMMER_DESC"
+attack_type = "MELEE"
+hands = "2H"
+ignore_armour = true
+injury_dice_modifier = 1
+keywords = {
+&"critical": 1,
+&"risky": 1,
+&"dangerous": 1
+}

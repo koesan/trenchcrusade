@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="UnitData" load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/unit_data.gd" id="1"]
+[ext_resource type="Resource" path="res://assets/data/attacks/teeth_and_claws.tres" id="2"]
+[ext_resource type="Resource" path="res://assets/data/abilities/artificial_life.tres" id="3"]
+[ext_resource type="Resource" path="res://assets/data/abilities/pin.tres" id="4"]
+[ext_resource type="Resource" path="res://assets/data/abilities/agile.tres" id="5"]
+[ext_resource type="Script" path="res://scripts/data/loadout_option.gd" id="6"]
+
+[sub_resource type="Resource" id="Loadout1"]
+script = ExtResource("6")
+option_name_key = "LIONS_OF_JABIR_LOADOUT_STANDARD"
+
+[sub_resource type="Resource" id="Loadout2"]
+script = ExtResource("6")
+option_name_key = "LIONS_OF_JABIR_LOADOUT_FIERCE"
+cost_delta = 5
+extra_keywords = {
+&"fear": 1
+}
+
+[resource]
+script = ExtResource("1")
+unit_name = "Lions of Jabir"
+battlekit_rules = {
+"categories": [3],
+"items": [&"wind_amulet"]
+}
+faction_id = &"iron_sultanate"
+cost = 60
+availability_max = 2
+movement_range = 8.0
+speed = 8.0
+armour = 0
+melee_dice_modifier = 1
+ranged_dice_modifier = 0
+model_scene_path = "res://assets/models/characters/Lions_of_Jabir.glb"
+attacks = [ExtResource("2")]
+abilities = [ExtResource("3"), ExtResource("4"), ExtResource("5")]
+loadout_options = Array[Resource]([SubResource("Loadout1"), SubResource("Loadout2")])
+keywords = {
+&"artificial": 1,
+&"sultanate": 1,
+&"injury_dice_defence": -1,
+&"dash_dice_bonus": 1,
+&"agile": 1,
+&"pin": 1
+}

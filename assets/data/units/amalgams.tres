@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="UnitData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/unit_data.gd" id="1"]
+[ext_resource type="Resource" path="res://assets/data/attacks/machine_gun.tres" id="2"]
+[ext_resource type="Resource" path="res://assets/data/abilities/six_armed_monstrosity.tres" id="3"]
+[ext_resource type="Resource" path="res://assets/data/abilities/corpulent.tres" id="4"]
+[ext_resource type="Resource" path="res://assets/data/abilities/trample.tres" id="5"]
+[ext_resource type="Resource" path="res://assets/data/abilities/unstoppable.tres" id="6"]
+[ext_resource type="Resource" path="res://assets/data/attacks/great_hammer_maul.tres" id="7"]
+[ext_resource type="Resource" path="res://assets/data/attacks/putrid_shotgun.tres" id="8"]
+[ext_resource type="Resource" path="res://assets/data/attacks/sword_axe.tres" id="9"]
+[ext_resource type="Script" path="res://scripts/data/loadout_option.gd" id="10"]
+[ext_resource type="Resource" path="res://assets/data/attacks/viscera_cannon.tres" id="11"]
+
+[sub_resource type="Resource" id="LO_STD"]
+script = ExtResource("10")
+option_name_key = "AMALGAM_LOADOUT_STANDARD"
+
+[sub_resource type="Resource" id="LO_VISCERA"]
+script = ExtResource("10")
+option_name_key = "AMALGAM_LOADOUT_VISCERA"
+attacks_override = Array[Resource]([ExtResource("2"), ExtResource("7"), ExtResource("9"), ExtResource("11")])
+cost_delta = 30
+max_per_warband = 2
+
+[resource]
+script = ExtResource("1")
+unit_name = "Amalgam"
+battlekit_rules = {
+"categories": [0, 1, 4]
+}
+faction_id = &"cult_of_the_black_grail"
+cost = 224
+kit_cost = 84
+availability_max = 1
+model_scene_path = "res://assets/models/characters/Amalgams.glb"
+has_tough = true
+has_fear = true
+abilities = Array[Resource]([ExtResource("3"), ExtResource("4"), ExtResource("5"), ExtResource("6")])
+attacks = Array[Resource]([ExtResource("2"), ExtResource("7"), ExtResource("8"), ExtResource("9")])
+loadout_options = Array[Resource]([SubResource("LO_STD"), SubResource("LO_VISCERA")])
+keywords = {
+&"annihilator": 1,
+&"black_grail": 1,
+&"fixed_weapon_loadout": 1,
+&"ignore_offhand_weapon": 1,
+&"injury_dice_defence": -2,
+&"negate_gas": 1,
+&"negate_heavy": 1,
+&"strong": 1,
+&"unstoppable": 1
+}

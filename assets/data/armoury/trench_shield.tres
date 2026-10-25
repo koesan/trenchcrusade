@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="ArmouryItem" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/armoury_item.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+item_id = &"trench_shield"
+name_key = "ARM_TRENCH_SHIELD"
+desc_key = "ARM_TRENCH_SHIELD_DESC"
+category = 4
+cost = 10
+cost_currency = 0
+limit_per_warband = 0
+elite_only = false
+required_unit_names = Array[String]([])
+required_keywords = Array[StringName]([])
+required_item_id = &""
+restriction_key = ""
+granted_attacks = Array[Resource]([])
+armour_value = 1
+granted_keywords = {
+&"shield": 1
+}
+hands = 1

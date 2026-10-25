@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="24" viewBox="0 0 256 24">
+<defs></defs>
+<path d="M8 12 H104" stroke="#6b5636" stroke-width="1"/>
+<path d="M152 12 H248" stroke="#6b5636" stroke-width="1"/>
+<path d="M104 12 L110 8 L116 12 L110 16 Z M140 12 L146 8 L152 12 L146 16 Z" fill="#b0915a"/>
+<circle cx="8" cy="12" r="1.6" fill="#6b5636"/><circle cx="248" cy="12" r="1.6" fill="#6b5636"/>
+<path d="M126.13 10.47 L124.43 3.50 L131.57 3.50 L129.87 10.47 L136.50 8.43 L136.50 15.57 L129.87 13.53 L131.57 20.50 L124.43 20.50 L126.13 13.53 L119.50 15.57 L119.50 8.43 Z" fill="#c03a2c" fill-opacity="1.0"/>
+</svg>

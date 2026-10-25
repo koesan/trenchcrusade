@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="UnitData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/unit_data.gd" id="1"]
+[ext_resource type="Resource" path="res://assets/data/attacks/bayonet.tres" id="2"]
+[ext_resource type="Resource" path="res://assets/data/abilities/onward_christian_soldiers.tres" id="3"]
+[ext_resource type="Resource" path="res://assets/data/attacks/bolt_action_rifle.tres" id="3_2nxeo"]
+[ext_resource type="Resource" path="res://assets/data/abilities/god_is_with_us.tres" id="4"]
+
+[resource]
+script = ExtResource("1")
+unit_name = "Trench Cleric"
+faction_id = &"new_antioch"
+cost = 72
+kit_cost = 12
+availability_max = 1
+melee_dice_modifier = 1
+ranged_dice_modifier = 1
+model_scene_path = "res://assets/models/characters/Trench_Cleric.glb"
+abilities = Array[Resource]([ExtResource("3"), ExtResource("4")])
+attacks = Array[Resource]([ExtResource("3_2nxeo"), ExtResource("2")])
+keywords = {
+&"elite": 1,
+&"negate_fear": 1,
+&"new_antioch": 1,
+&"onward_christian_soldiers": 1
+}

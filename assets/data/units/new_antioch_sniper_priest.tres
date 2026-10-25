@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="UnitData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/unit_data.gd" id="1"]
+[ext_resource type="Resource" path="res://assets/data/attacks/sniper_rifle.tres" id="2"]
+[ext_resource type="Resource" path="res://assets/data/abilities/aim.tres" id="3"]
+[ext_resource type="Resource" path="res://assets/data/abilities/absolute_faith.tres" id="4"]
+
+[resource]
+script = ExtResource("1")
+unit_name = "Sniper Priest"
+faction_id = &"new_antioch"
+cost = 85
+kit_cost = 35
+availability_max = 2
+melee_dice_modifier = -1
+ranged_dice_modifier = 2
+model_scene_path = "res://assets/models/characters/Sniper_Priest.glb"
+abilities = Array[Resource]([ExtResource("3"), ExtResource("4")])
+attacks = Array[Resource]([ExtResource("2")])
+keywords = {
+&"absolute_faith": 1,
+&"elite": 1,
+&"new_antioch": 1
+}

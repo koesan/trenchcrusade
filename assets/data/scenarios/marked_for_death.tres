@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="ScenarioData" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/scenario_data.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/rules/scenarios/marked_for_death.gd" id="2"]
+[ext_resource type="Texture2D" path="res://assets/textures/ui/menu_backgrounds/lobby_bg_01.jpg" id="banner_art"]
+
+[resource]
+script = ExtResource("1")
+scenario_id = &"marked_for_death"
+scenario_name_key = "SCENARIO_MARKED_FOR_DEATH_NAME"
+scenario_desc_key = "SCENARIO_MARKED_FOR_DEATH_DESC"
+banner = ExtResource("banner_art")
+turn_limit = 4
+points_budget = 700
+glory_budget = 10
+infiltrators_allowed = true
+p1_deploy_zone = Rect2(-40, -40, 38, 80)
+p2_deploy_zone = Rect2(2, -40, 38, 80)
+victory_type = 1
+objectives = []
+logic_script = ExtResource("2")
+special_rules = {}
+terrain_placements = Array[Resource]([])

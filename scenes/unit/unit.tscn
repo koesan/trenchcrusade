@@ -1,0 +1,77 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scenes/unit/unit.gd" id="1_unit"]
+[ext_resource type="Script" path="res://scenes/unit/path_range_visualizer.gd" id="2_visualizer"]
+[ext_resource type="Script" path="res://scenes/unit/circle_range_visualizer.gd" id="3_circle_visualizer"]
+[ext_resource type="Shader" path="res://assets/shaders/team_ring.gdshader" id="4_team_ring"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_collision"]
+height = 2.0
+radius = 0.6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ring"]
+transparency = 1
+blend_mode = 1
+albedo_color = Color(0.9, 0.7, 0.1, 0.6)
+emission_enabled = true
+emission = Color(0.9, 0.7, 0.1, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="TorusMesh" id="TorusMesh_ring"]
+material = SubResource("StandardMaterial3D_ring")
+inner_radius = 0.75
+outer_radius = 0.85
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_placeholder"]
+transparency = 1
+albedo_color = Color(0.6, 0.1, 0.1, 0.4)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_placeholder"]
+material = SubResource("StandardMaterial3D_placeholder")
+top_radius = 0.3
+bottom_radius = 0.3
+height = 1.8
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_team_ring"]
+render_priority = 1
+shader = ExtResource("4_team_ring")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_team_ring"]
+material = SubResource("ShaderMaterial_team_ring")
+size = Vector2(2, 2)
+
+[node name="Unit" type="CharacterBody3D"]
+script = ExtResource("1_unit")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CylinderShape3D_collision")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.55, 0, 0, 0, 0.55, 0, 0, 0, 0.55, 0, 0.1994, 0)
+
+[node name="SelectionRing" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.37, 0)
+mesh = SubResource("TorusMesh_ring")
+
+[node name="TeamRing" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03, 0)
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_team_ring")
+
+[node name="RangeIndicator" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
+script = ExtResource("2_visualizer")
+
+[node name="AttackRangeIndicator" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
+script = ExtResource("3_circle_visualizer")
+
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+radius = 0.6
+
+[node name="EditorPlaceholder" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.27, 0)
+mesh = SubResource("CylinderMesh_placeholder")

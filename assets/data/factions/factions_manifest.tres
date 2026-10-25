@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FactionManifest" load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/faction_manifest.gd" id="1"]
+[ext_resource type="Resource" path="res://assets/data/factions/iron_sultanate.tres" id="2"]
+[ext_resource type="Resource" path="res://assets/data/factions/heretic_legion.tres" id="3"]
+[ext_resource type="Resource" path="res://assets/data/factions/trench_pilgrims.tres" id="4"]
+[ext_resource type="Resource" path="res://assets/data/factions/cult_of_the_black_grail.tres" id="5"]
+[ext_resource type="Resource" path="res://assets/data/factions/new_antioch.tres" id="6"]
+[ext_resource type="Resource" path="res://assets/data/factions/court_of_seven_headed_serpent.tres" id="7"]
+
+[resource]
+script = ExtResource("1")
+factions = Array[FactionData]([ExtResource("2"), ExtResource("3"), ExtResource("4"), ExtResource("5"), ExtResource("6"), ExtResource("7")])

@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="AttackData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/attack_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+attack_name = "ATTACK_INCENDIARY_GRENADES"
+attack_range = 8.0
+description = "ATTACK_INCENDIARY_GRENADES_DESC"
+attack_type = "RANGED"
+hands = "1H"
+is_assault = true
+ignore_cover = true
+ignore_armour = false
+is_sniper = false
+is_deadly = false
+is_cumbersome = false
+is_blast = false
+blast_radius = 0.0
+has_cleave = false
+cleave_count = 1
+dice_modifier = 0
+injury_dice_modifier = 0
+is_fire = true
+is_poison = false
+keywords = {
+&"ignore_long_range": 1,
+&"grenade": 1,
+&"liquid_fire": 1
+}

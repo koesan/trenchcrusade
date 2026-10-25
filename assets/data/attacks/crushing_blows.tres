@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="AttackData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/attack_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+attack_name = "CRUSHING_BLOWS"
+attack_range = 1.0
+description = "CRUSHING_BLOWS_DESC"
+attack_type = "MELEE"
+hands = "1H"
+is_assault = false
+ignore_cover = false
+ignore_armour = false
+is_sniper = false
+is_deadly = false
+is_cumbersome = false
+is_blast = false
+blast_radius = 0.0
+has_cleave = true
+cleave_count = 2
+dice_modifier = 0
+injury_dice_modifier = 0
+is_fire = false
+is_poison = false
+keywords = {
+&"innate": 1
+}

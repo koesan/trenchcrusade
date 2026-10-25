@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="AbilityData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/ability_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+ability_id = &"iron_clawed_hands"
+display_name = "IRON_CLAWED_HANDS"
+description = "IRON_CLAWED_HANDS_DESC"
+action_key = ""
+is_risky = false
+requires_not_engaged = false
+requires_engaged = false
+requires_standing = true
+requires_roll = false
+success_threshold = 7
+dice_modifier = 0
+target_type = "none"
+range_meters = 0.0
+target_must_be_alive = false
+target_same_faction = false
+effect_type = "custom"
+effect_amount = 0
+crit_amount = 0

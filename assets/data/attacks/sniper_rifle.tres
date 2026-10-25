@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="AttackData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/attack_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+attack_name = "ATTACK_SNIPER_RIFLE"
+attack_range = 48.0
+description = "ATTACK_SNIPER_RIFLE_DESC"
+attack_type = "RANGED"
+hands = "2H"
+dice_modifier = 1
+keywords = {
+&"critical": 1,
+&"risky": 1,
+&"bulls_eye": 1
+}

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="AttackData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/attack_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+attack_name = "ATTACK_AUTOMATIC_RIFLE"
+attack_range = 24.0
+description = "ATTACK_AUTOMATIC_RIFLE_DESC"
+attack_type = "RANGED"
+hands = "2H"
+is_assault = true
+keywords = {
+&"automatic": 2,
+&"bayonet_lug": 1,
+&"focused_fire": 1
+}

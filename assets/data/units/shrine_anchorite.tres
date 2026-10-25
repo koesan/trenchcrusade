@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="UnitData" load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/unit_data.gd" id="1"]
+[ext_resource type="Resource" path="res://assets/data/attacks/catherine_wheel.tres" id="2"]
+[ext_resource type="Resource" path="res://assets/data/attacks/bonebreaker_mace.tres" id="3"]
+[ext_resource type="Resource" path="res://assets/data/abilities/broken_on_the_wheel.tres" id="4"]
+[ext_resource type="Resource" path="res://assets/data/abilities/symphony_of_slaughter.tres" id="5"]
+[ext_resource type="Script" path="res://scripts/data/loadout_option.gd" id="6"]
+
+[sub_resource type="Resource" id="Loadout1"]
+script = ExtResource("6")
+option_name_key = "SHRINE_LOADOUT_STANDARD"
+
+[sub_resource type="Resource" id="Loadout2"]
+script = ExtResource("6")
+option_name_key = "SHRINE_LOADOUT_BROKEN"
+armour_override = 0
+extra_keywords = {
+&"broken_on_wheel_chosen": 1
+}
+cost_delta = 20
+
+[resource]
+script = ExtResource("1")
+unit_name = "Shrine Anchorite"
+battlekit_rules = {
+"none": true
+}
+faction_id = &"trench_pilgrims"
+cost = 140
+availability_max = 1
+movement_range = 6.0
+speed = 6.0
+armour = 3
+melee_dice_modifier = 2
+ranged_dice_modifier = 0
+model_scene_path = "res://assets/models/characters/Shrine_Anchorite.glb"
+has_tough = true
+has_fear = true
+attacks = [ExtResource("2"), ExtResource("3")]
+abilities = [ExtResource("4"), ExtResource("5")]
+loadout_options = Array[Resource]([SubResource("Loadout1"), SubResource("Loadout2")])
+keywords = {
+&"negate_shrapnel": 1,
+&"strong": 1,
+&"negate_heavy": 1,
+&"pilgrim": 1
+}
+

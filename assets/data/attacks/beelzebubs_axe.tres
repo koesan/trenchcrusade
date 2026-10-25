@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="AttackData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/attack_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+attack_name = "ATTACK_BEELZEBUBS_AXE"
+attack_range = 1.0
+description = "ATTACK_BEELZEBUBS_AXE_DESC"
+attack_type = "MELEE"
+hands = "2H"
+injury_dice_modifier = 2
+keywords = {
+&"heavy": 1,
+&"infection_markers": 1
+}

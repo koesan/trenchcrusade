@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="UnitData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/unit_data.gd" id="1"]
+[ext_resource type="Resource" path="res://assets/data/attacks/assassins_dagger.tres" id="2"]
+[ext_resource type="Resource" path="res://assets/data/abilities/time_slip.tres" id="3"]
+[ext_resource type="Resource" path="res://assets/data/abilities/temporal_assassin.tres" id="4"]
+
+[resource]
+script = ExtResource("1")
+unit_name = "Sultanate Assassin"
+faction_id = &"iron_sultanate"
+cost = 100
+kit_cost = 15
+availability_max = 1
+melee_dice_modifier = 2
+ranged_dice_modifier = 1
+model_scene_path = "res://assets/models/characters/Sultanate_Assassin.glb"
+abilities = Array[Resource]([ExtResource("3"), ExtResource("4")])
+attacks = Array[Resource]([ExtResource("2")])
+keywords = {
+&"elite": 1,
+&"infiltrator": 1,
+&"sultanate": 1,
+&"time_slip": 1
+}

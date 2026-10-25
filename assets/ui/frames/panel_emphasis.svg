@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+<defs><linearGradient id="fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#231c18" stop-opacity="0.96"/><stop offset="1" stop-color="#100d0b" stop-opacity="0.96"/></linearGradient></defs>
+<path d="M15 1 H113 L127 15 V113 L113 127 H15 L1 113 V15 Z" fill="url(#fill)" stroke="#0b0908" stroke-width="2"/>
+<path d="M15.5 2.5 H112.5 L125.5 15.5 V112.5 L112.5 125.5 H15.5 L2.5 112.5 V15.5 Z" fill="none" stroke="#e2c68c" stroke-width="1.6"/>
+<path d="M18 8 H110 L120 18 V110 L110 120 H18 L8 110 V18 Z" fill="none" stroke="#e8dfcc" stroke-opacity="0.26" stroke-width="1"/>
+<path d="M8.76 8.92 L7.92 5.48 L11.44 5.48 L10.60 8.92 L13.88 7.92 L13.88 11.44 L10.60 10.44 L11.44 13.88 L7.92 13.88 L8.76 10.44 L5.48 11.44 L5.48 7.92 Z" fill="#c03a2c" fill-opacity="1.0"/>
+<path d="M117.40 8.92 L116.56 5.48 L120.08 5.48 L119.24 8.92 L122.52 7.92 L122.52 11.44 L119.24 10.44 L120.08 13.88 L116.56 13.88 L117.40 10.44 L114.12 11.44 L114.12 7.92 Z" fill="#c03a2c" fill-opacity="1.0"/>
+<path d="M8.76 117.56 L7.92 114.12 L11.44 114.12 L10.60 117.56 L13.88 116.56 L13.88 120.08 L10.60 119.08 L11.44 122.52 L7.92 122.52 L8.76 119.08 L5.48 120.08 L5.48 116.56 Z" fill="#c03a2c" fill-opacity="1.0"/>
+<path d="M117.40 117.56 L116.56 114.12 L120.08 114.12 L119.24 117.56 L122.52 116.56 L122.52 120.08 L119.24 119.08 L120.08 122.52 L116.56 122.52 L117.40 119.08 L114.12 120.08 L114.12 116.56 Z" fill="#c03a2c" fill-opacity="1.0"/>
+</svg>

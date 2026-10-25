@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AttackData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/attack_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+attack_name = "ATTACK_SACRIFICIAL_BLADE"
+attack_range = 1.0
+description = "ATTACK_SACRIFICIAL_BLADE_DESC"
+attack_type = "MELEE"
+hands = "1H"
+keywords = {
+&"risky": 1,
+&"injury_modifier": 2
+}

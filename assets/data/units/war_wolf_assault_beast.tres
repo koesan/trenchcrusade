@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="UnitData" load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/unit_data.gd" id="1"]
+[ext_resource type="Resource" path="res://assets/data/attacks/chainsaw_mouth.tres" id="2"]
+[ext_resource type="Resource" path="res://assets/data/attacks/shredding_claws.tres" id="3"]
+[ext_resource type="Resource" path="res://assets/data/abilities/loping_dash.tres" id="4"]
+[ext_resource type="Resource" path="res://assets/data/abilities/assault_beast.tres" id="5"]
+
+[resource]
+script = ExtResource("1")
+unit_name = "War Wolf Assault Beast"
+battlekit_rules = {
+"none": true
+}
+faction_id = &"heretic_legion"
+cost = 145
+availability_max = 1
+movement_range = 8.0
+speed = 8.0
+armour = 3
+melee_dice_modifier = 2
+ranged_dice_modifier = 0
+model_scene_path = "res://assets/models/characters/War_Wolf_Assault_Beast.glb"
+has_fear = true
+has_tough = true
+attacks = [ExtResource("2"), ExtResource("3")]
+abilities = [ExtResource("4"), ExtResource("5")]
+keywords = {
+&"artificial": 1,
+&"heretic": 1,
+&"negate_difficult_terrain": 1,
+&"dash_dice_bonus": 1,
+&"fixed_weapon_loadout": 1,
+&"assault_beast": 1
+}

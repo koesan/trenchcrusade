@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scenes/ui/hud/action_panel/action_buttons_panel.gd" id="1_panel"]
+
+[node name="ActionButtonsPanel" type="HFlowContainer"]
+custom_minimum_size = Vector2(380, 0)
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 4
+script = ExtResource("1_panel")

@@ -1,0 +1,69 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scenes/ui/faction_select/faction_choice_overlay.gd" id="1"]
+
+[node name="FactionChoiceOverlay" type="Control"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1")
+
+[node name="Dim" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.55)
+
+[node name="Center" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="Center"]
+custom_minimum_size = Vector2(520, 0)
+layout_mode = 2
+theme_type_variation = &"PanelGold"
+
+[node name="Margin" type="MarginContainer" parent="Center/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 26
+theme_override_constants/margin_top = 22
+theme_override_constants/margin_right = 26
+theme_override_constants/margin_bottom = 22
+
+[node name="VBox" type="VBoxContainer" parent="Center/Panel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Title" type="Label" parent="Center/Panel/Margin/VBox"]
+layout_mode = 2
+theme_type_variation = &"LabelTitleLarge"
+horizontal_alignment = 1
+text = "SIN_SELECTION_TITLE"
+
+[node name="Description" type="Label" parent="Center/Panel/Margin/VBox"]
+layout_mode = 2
+theme_type_variation = &"LabelParchmentTan"
+horizontal_alignment = 1
+autowrap_mode = 2
+text = "SIN_SELECTION_DESC"
+
+[node name="HSeparator" type="HSeparator" parent="Center/Panel/Margin/VBox"]
+layout_mode = 2
+
+[node name="ChoiceButtons" type="VBoxContainer" parent="Center/Panel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="CancelBtn" type="Button" parent="Center/Panel/Margin/VBox"]
+layout_mode = 2
+theme_type_variation = &"ButtonDanger"
+text = "CANCEL"

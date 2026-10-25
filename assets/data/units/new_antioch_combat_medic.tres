@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="UnitData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/unit_data.gd" id="1"]
+[ext_resource type="Resource" path="res://assets/data/abilities/treat.tres" id="3"]
+[ext_resource type="Resource" path="res://assets/data/abilities/finish_the_fallen.tres" id="4"]
+[ext_resource type="Resource" path="res://assets/data/abilities/expert_medic.tres" id="5"]
+[ext_resource type="Resource" path="res://assets/data/attacks/misericordia.tres" id="6"]
+
+[resource]
+script = ExtResource("1")
+unit_name = "Combat Medic"
+battlekit_rules = {
+"categories": [0, 1, 2, 4, 5]
+}
+faction_id = &"new_antioch"
+cost = 65
+availability_max = 1
+armour = 1
+model_scene_path = "res://assets/models/characters/Combat_Medic.glb"
+abilities = Array[Resource]([ExtResource("3"), ExtResource("4"), ExtResource("5")])
+attacks = Array[Resource]([ExtResource("6")])
+keywords = {
+&"expert_medic": 1,
+&"finish_the_fallen": 1,
+&"negate_fear": 1,
+&"negate_gas": 1,
+&"new_antioch": 1
+}

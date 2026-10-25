@@ -1,0 +1,62 @@
+[gd_resource type="Resource" script_class="FactionData" load_steps=14 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/faction_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/textures/factions/court_of_seven_headed_serpent_logo.webp" id="logo"]
+[ext_resource type="Resource" path="res://assets/data/units/court_auxilia_sorceror.tres" id="2"]
+[ext_resource type="Resource" path="res://assets/data/units/court_desecrated_saint.tres" id="3"]
+[ext_resource type="Resource" path="res://assets/data/units/court_hell_knight.tres" id="4"]
+[ext_resource type="Resource" path="res://assets/data/units/court_hunter_of_the_left_hand_path.tres" id="5"]
+[ext_resource type="Resource" path="res://assets/data/units/court_pit_locust.tres" id="6"]
+[ext_resource type="Resource" path="res://assets/data/units/court_praetor.tres" id="7"]
+[ext_resource type="Resource" path="res://assets/data/units/court_yoke_fiend.tres" id="8"]
+[ext_resource type="Resource" path="res://assets/data/units/court_wretched.tres" id="9"]
+[ext_resource type="Resource" path="res://assets/data/units/goetic_warlock.tres" id="10"]
+[ext_resource type="Resource" path="res://assets/data/units/scripture_guardian.tres" id="11"]
+[ext_resource type="Resource" path="res://assets/data/units/sin_eater.tres" id="12"]
+
+
+[ext_resource type="Resource" path="res://assets/data/armoury/arquebus.tres" id="13"]
+[ext_resource type="Resource" path="res://assets/data/armoury/blunderbuss.tres" id="14"]
+[ext_resource type="Resource" path="res://assets/data/armoury/combat_helmet.tres" id="15"]
+[ext_resource type="Resource" path="res://assets/data/armoury/crown_of_hellfire.tres" id="16"]
+[ext_resource type="Resource" path="res://assets/data/armoury/flamethrower__trench_pilgrims.tres" id="17"]
+[ext_resource type="Resource" path="res://assets/data/armoury/gas_grenades.tres" id="18"]
+[ext_resource type="Resource" path="res://assets/data/armoury/gas_mask.tres" id="19"]
+[ext_resource type="Resource" path="res://assets/data/armoury/great_hammer_maul.tres" id="20"]
+[ext_resource type="Resource" path="res://assets/data/armoury/greatsword_axe.tres" id="21"]
+[ext_resource type="Resource" path="res://assets/data/armoury/head_taker.tres" id="22"]
+[ext_resource type="Resource" path="res://assets/data/armoury/heavy_flamethrower.tres" id="23"]
+[ext_resource type="Resource" path="res://assets/data/armoury/hellblade__court_of_seven_headed_serpent.tres" id="24"]
+[ext_resource type="Resource" path="res://assets/data/armoury/incendiary_ammunition.tres" id="25"]
+[ext_resource type="Resource" path="res://assets/data/armoury/incendiary_grenades.tres" id="26"]
+[ext_resource type="Resource" path="res://assets/data/armoury/malebranche_sword.tres" id="27"]
+[ext_resource type="Resource" path="res://assets/data/armoury/musical_instrument.tres" id="28"]
+[ext_resource type="Resource" path="res://assets/data/armoury/ophidian_rifle.tres" id="29"]
+[ext_resource type="Resource" path="res://assets/data/armoury/pistol.tres" id="30"]
+[ext_resource type="Resource" path="res://assets/data/armoury/polearm.tres" id="31"]
+[ext_resource type="Resource" path="res://assets/data/armoury/reinforced_armour__trench_pilgrims.tres" id="32"]
+[ext_resource type="Resource" path="res://assets/data/armoury/restraining_muzzle.tres" id="33"]
+[ext_resource type="Resource" path="res://assets/data/armoury/serpent_assault_gun.tres" id="34"]
+[ext_resource type="Resource" path="res://assets/data/armoury/shotgun.tres" id="35"]
+[ext_resource type="Resource" path="res://assets/data/armoury/shovel__court_of_seven_headed_serpent.tres" id="36"]
+[ext_resource type="Resource" path="res://assets/data/armoury/standard_armour.tres" id="37"]
+[ext_resource type="Resource" path="res://assets/data/armoury/sword_axe.tres" id="38"]
+[ext_resource type="Resource" path="res://assets/data/armoury/torture_instrument.tres" id="39"]
+[ext_resource type="Resource" path="res://assets/data/armoury/trench_club.tres" id="40"]
+[ext_resource type="Resource" path="res://assets/data/armoury/trench_knife.tres" id="41"]
+[ext_resource type="Resource" path="res://assets/data/armoury/trench_shield.tres" id="42"]
+[ext_resource type="Resource" path="res://assets/data/armoury/troop_flag.tres" id="43"]
+[ext_resource type="Resource" path="res://assets/data/armoury/unholy_relic.tres" id="44"]
+[ext_resource type="Resource" path="res://assets/data/armoury/unholy_trinket.tres" id="45"]
+
+[resource]
+script = ExtResource("1")
+faction_id = &"court_of_seven_headed_serpent"
+display_name = "Court of Seven Headed Serpent (Yedi Başlı Yılan Divanı)"
+alignment = 2
+team_color = Color(0.45, 0.15, 0.45, 1)
+available_units = [ExtResource("2"), ExtResource("3"), ExtResource("4"), ExtResource("5"), ExtResource("6"), ExtResource("7"), ExtResource("8"), ExtResource("9"), ExtResource("10"), ExtResource("11"), ExtResource("12")]
+has_faction_rule = true
+faction_rule_summary = "FACTION_COURT_OF_SEVEN_HEADED_SERPENT_RULES"
+logo = ExtResource("logo")
+armoury = Array[Resource]([ExtResource("13"), ExtResource("14"), ExtResource("15"), ExtResource("16"), ExtResource("17"), ExtResource("18"), ExtResource("19"), ExtResource("20"), ExtResource("21"), ExtResource("22"), ExtResource("23"), ExtResource("24"), ExtResource("25"), ExtResource("26"), ExtResource("27"), ExtResource("28"), ExtResource("29"), ExtResource("30"), ExtResource("31"), ExtResource("32"), ExtResource("33"), ExtResource("34"), ExtResource("35"), ExtResource("36"), ExtResource("37"), ExtResource("38"), ExtResource("39"), ExtResource("40"), ExtResource("41"), ExtResource("42"), ExtResource("43"), ExtResource("44"), ExtResource("45")])

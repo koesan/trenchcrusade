@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="UnitData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/unit_data.gd" id="1"]
+[ext_resource type="Resource" path="res://assets/data/attacks/machine_gun.tres" id="2"]
+[ext_resource type="Resource" path="res://assets/data/abilities/machine_armour_ability.tres" id="3"]
+[ext_resource type="Script" path="res://scripts/data/loadout_option.gd" id="4"]
+[ext_resource type="Resource" path="res://assets/data/attacks/sword_axe.tres" id="5"]
+[ext_resource type="Resource" path="res://assets/data/attacks/heavy_flamethrower.tres" id="6"]
+
+[sub_resource type="Resource" id="Loadout1"]
+script = ExtResource("4")
+option_name_key = "MHI_LOADOUT_REINFORCED"
+
+[sub_resource type="Resource" id="Loadout2"]
+script = ExtResource("4")
+option_name_key = "MHI_LOADOUT_MACHINE"
+armour_override = 3
+cost_delta = 10
+extra_keywords = {
+&"charge_bonus_d3": 1,
+&"steadfast": 1
+}
+
+[sub_resource type="Resource" id="LO_FLAMER"]
+script = ExtResource("4")
+option_name_key = "MHI_LOADOUT_HEAVY_FLAMER"
+attacks_override = Array[Resource]([ExtResource("5"), ExtResource("6")])
+cost_delta = 5
+max_per_warband = 1
+
+[resource]
+script = ExtResource("1")
+unit_name = "Mechanized Heavy Infantry"
+battlekit_rules = {
+"categories": [0, 1, 2, 4, 5]
+}
+faction_id = &"new_antioch"
+cost = 139
+kit_cost = 54
+availability_max = 3
+armour = 2
+ranged_dice_modifier = 1
+model_scene_path = "res://assets/models/characters/Mechanized_Heavy_Infantry.glb"
+abilities = Array[Resource]([ExtResource("3")])
+attacks = Array[Resource]([ExtResource("2"), ExtResource("5")])
+loadout_options = Array[Resource]([SubResource("Loadout1"), SubResource("Loadout2"), SubResource("LO_FLAMER")])
+keywords = {
+&"negate_heavy": 1,
+&"new_antioch": 1,
+&"strong": 1
+}

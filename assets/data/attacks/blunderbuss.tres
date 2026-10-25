@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AttackData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/attack_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+attack_name = "ATTACK_BLUNDERBUSS"
+attack_range = 10.0
+description = "ATTACK_BLUNDERBUSS_DESC"
+attack_type = "RANGED"
+hands = "2H"
+keywords = {
+&"shrapnel": 1,
+&"shield_combo": 1
+}

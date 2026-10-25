@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="UnitData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/unit_data.gd" id="1"]
+[ext_resource type="Resource" path="res://assets/data/attacks/trench_club.tres" id="3_3v614"]
+[ext_resource type="Resource" path="res://assets/data/abilities/loudspeakers.tres" id="4"]
+[ext_resource type="Resource" path="res://assets/data/attacks/pistol.tres" id="4_58l81"]
+[ext_resource type="Resource" path="res://assets/data/abilities/laying_on_hands.tres" id="5"]
+[ext_resource type="Resource" path="res://assets/data/attacks/pistol_melee.tres" id="5_5lvcb"]
+
+[resource]
+script = ExtResource("1")
+unit_name = "War Prophet"
+faction_id = &"trench_pilgrims"
+cost = 89
+kit_cost = 9
+availability_max = 1
+melee_dice_modifier = 2
+ranged_dice_modifier = 2
+model_scene_path = "res://assets/models/characters/War_Prophet.glb"
+is_leader = true
+has_memento_mori = true
+abilities = Array[Resource]([ExtResource("4"), ExtResource("5")])
+attacks = Array[Resource]([ExtResource("3_3v614"), ExtResource("4_58l81"), ExtResource("5_5lvcb")])
+keywords = {
+&"elite": 1,
+&"leader": 1,
+&"pilgrim": 1
+}

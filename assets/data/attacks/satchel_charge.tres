@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="AttackData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/attack_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+attack_name = "ATTACK_SATCHEL_CHARGE"
+attack_range = 6.0
+description = "ATTACK_SATCHEL_CHARGE_DESC"
+attack_type = "RANGED"
+hands = "1H"
+ignore_cover = true
+ignore_armour = true
+is_blast = true
+blast_radius = 3.0
+injury_dice_modifier = 1
+keywords = {
+&"scatter": 1,
+&"consumable": 1,
+&"heavy": 1,
+&"grenade": 1
+}

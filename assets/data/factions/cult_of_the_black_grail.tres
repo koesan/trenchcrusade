@@ -1,0 +1,60 @@
+[gd_resource type="Resource" script_class="FactionData" load_steps=12 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/faction_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/textures/factions/cult_of_the_black_grail_logo.webp" id="logo"]
+[ext_resource type="Resource" path="res://assets/data/units/amalgams.tres" id="2"]
+[ext_resource type="Resource" path="res://assets/data/units/corpse_guard.tres" id="3"]
+[ext_resource type="Resource" path="res://assets/data/units/grail_thrall.tres" id="4"]
+[ext_resource type="Resource" path="res://assets/data/units/heralds_of_beelzebub.tres" id="5"]
+[ext_resource type="Resource" path="res://assets/data/units/hound_of_the_black_grail.tres" id="6"]
+[ext_resource type="Resource" path="res://assets/data/units/lord_of_tumours.tres" id="7"]
+[ext_resource type="Resource" path="res://assets/data/units/plague_knight.tres" id="8"]
+[ext_resource type="Resource" path="res://assets/data/units/fly_thrall.tres" id="9"]
+[ext_resource type="Resource" path="res://assets/data/units/scripture_guardian.tres" id="10"]
+[ext_resource type="Resource" path="res://assets/data/units/sin_eater.tres" id="11"]
+
+
+[ext_resource type="Resource" path="res://assets/data/armoury/bayonet.tres" id="12"]
+[ext_resource type="Resource" path="res://assets/data/armoury/beelzebubs_axe.tres" id="13"]
+[ext_resource type="Resource" path="res://assets/data/armoury/black_grail_shield.tres" id="14"]
+[ext_resource type="Resource" path="res://assets/data/armoury/blunderbuss.tres" id="15"]
+[ext_resource type="Resource" path="res://assets/data/armoury/bolt_action_rifle.tres" id="16"]
+[ext_resource type="Resource" path="res://assets/data/armoury/combat_helmet.tres" id="17"]
+[ext_resource type="Resource" path="res://assets/data/armoury/compound_eyes_helmet.tres" id="18"]
+[ext_resource type="Resource" path="res://assets/data/armoury/corruption_belcher.tres" id="19"]
+[ext_resource type="Resource" path="res://assets/data/armoury/field_shrine.tres" id="20"]
+[ext_resource type="Resource" path="res://assets/data/armoury/gas_grenades.tres" id="21"]
+[ext_resource type="Resource" path="res://assets/data/armoury/grail_devotee.tres" id="22"]
+[ext_resource type="Resource" path="res://assets/data/armoury/great_hammer_maul.tres" id="23"]
+[ext_resource type="Resource" path="res://assets/data/armoury/greatsword_axe.tres" id="24"]
+[ext_resource type="Resource" path="res://assets/data/armoury/infested_rifle.tres" id="25"]
+[ext_resource type="Resource" path="res://assets/data/armoury/machine_gun__cult_of_the_black_grail.tres" id="26"]
+[ext_resource type="Resource" path="res://assets/data/armoury/musical_instrument.tres" id="27"]
+[ext_resource type="Resource" path="res://assets/data/armoury/musket.tres" id="28"]
+[ext_resource type="Resource" path="res://assets/data/armoury/parasite_grenades.tres" id="29"]
+[ext_resource type="Resource" path="res://assets/data/armoury/pistol.tres" id="30"]
+[ext_resource type="Resource" path="res://assets/data/armoury/plague_blade.tres" id="31"]
+[ext_resource type="Resource" path="res://assets/data/armoury/polearm.tres" id="32"]
+[ext_resource type="Resource" path="res://assets/data/armoury/putrid_shotgun.tres" id="33"]
+[ext_resource type="Resource" path="res://assets/data/armoury/reinforced_armour__trench_pilgrims.tres" id="34"]
+[ext_resource type="Resource" path="res://assets/data/armoury/shotgun.tres" id="35"]
+[ext_resource type="Resource" path="res://assets/data/armoury/standard_armour.tres" id="36"]
+[ext_resource type="Resource" path="res://assets/data/armoury/sword_axe.tres" id="37"]
+[ext_resource type="Resource" path="res://assets/data/armoury/trench_club.tres" id="38"]
+[ext_resource type="Resource" path="res://assets/data/armoury/trench_knife.tres" id="39"]
+[ext_resource type="Resource" path="res://assets/data/armoury/trench_shield.tres" id="40"]
+[ext_resource type="Resource" path="res://assets/data/armoury/troop_flag.tres" id="41"]
+[ext_resource type="Resource" path="res://assets/data/armoury/unholy_trinket.tres" id="42"]
+[ext_resource type="Resource" path="res://assets/data/armoury/viscera_cannon.tres" id="43"]
+
+[resource]
+script = ExtResource("1")
+faction_id = &"cult_of_the_black_grail"
+display_name = "Cult of the Black Grail (Kara Kase Kültü)"
+alignment = 2
+team_color = Color(0.18, 0.45, 0.18, 1)
+available_units = [ExtResource("2"), ExtResource("3"), ExtResource("4"), ExtResource("5"), ExtResource("6"), ExtResource("7"), ExtResource("8"), ExtResource("9"), ExtResource("10"), ExtResource("11")]
+has_faction_rule = true
+faction_rule_summary = "FACTION_CULT_OF_THE_BLACK_GRAIL_RULES"
+logo = ExtResource("logo")
+armoury = Array[Resource]([ExtResource("12"), ExtResource("13"), ExtResource("14"), ExtResource("15"), ExtResource("16"), ExtResource("17"), ExtResource("18"), ExtResource("19"), ExtResource("20"), ExtResource("21"), ExtResource("22"), ExtResource("23"), ExtResource("24"), ExtResource("25"), ExtResource("26"), ExtResource("27"), ExtResource("28"), ExtResource("29"), ExtResource("30"), ExtResource("31"), ExtResource("32"), ExtResource("33"), ExtResource("34"), ExtResource("35"), ExtResource("36"), ExtResource("37"), ExtResource("38"), ExtResource("39"), ExtResource("40"), ExtResource("41"), ExtResource("42"), ExtResource("43")])

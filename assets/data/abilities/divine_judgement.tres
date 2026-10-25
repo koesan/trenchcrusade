@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="AbilityData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/ability_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+ability_id = &"divine_judgement"
+display_name = "DIVINE_JUDGEMENT"
+description = "DIVINE_JUDGEMENT_DESC"
+action_key = "divine_judgement"
+is_risky = true
+requires_not_engaged = true
+requires_engaged = false
+requires_standing = true
+requires_roll = true
+success_threshold = 7
+dice_modifier = 0
+target_type = "enemy"
+range_meters = 24.0
+target_must_be_alive = true
+target_same_faction = false
+effect_type = "add_blood"
+effect_amount = 1
+crit_amount = 0
+blood_bonus_vs_unholy = 1
+feedback_kind = "curse"

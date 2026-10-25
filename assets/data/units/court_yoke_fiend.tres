@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="UnitData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/unit_data.gd" id="1"]
+[ext_resource type="Resource" path="res://assets/data/attacks/great_hammer_maul.tres" id="2"]
+[ext_resource type="Resource" path="res://assets/data/abilities/hateful.tres" id="3"]
+[ext_resource type="Resource" path="res://assets/data/abilities/torturer.tres" id="4"]
+[ext_resource type="Resource" path="res://assets/data/attacks/pistol.tres" id="5"]
+[ext_resource type="Resource" path="res://assets/data/attacks/pistol_melee.tres" id="6"]
+[ext_resource type="Script" path="res://scripts/data/loadout_option.gd" id="7"]
+[ext_resource type="Resource" path="res://assets/data/attacks/arquebus.tres" id="8"]
+
+[sub_resource type="Resource" id="LO_STD"]
+script = ExtResource("7")
+option_name_key = "YOKE_LOADOUT_STANDARD"
+
+[sub_resource type="Resource" id="LO_ARQUEBUS"]
+script = ExtResource("7")
+option_name_key = "YOKE_LOADOUT_ARQUEBUS"
+attacks_override = Array[Resource]([ExtResource("2"), ExtResource("8")])
+cost_delta = 2
+
+[resource]
+script = ExtResource("1")
+unit_name = "Yoke Fiend"
+battlekit_rules = {
+"max_ranged": 1,
+"ranged_max_cost": 30
+}
+faction_id = &"court_of_seven_headed_serpent"
+cost = 46
+kit_cost = 16
+melee_dice_modifier = 1
+model_scene_path = "res://assets/models/characters/Yoke_Fiend.glb"
+abilities = Array[Resource]([ExtResource("3"), ExtResource("4")])
+attacks = Array[Resource]([ExtResource("2"), ExtResource("5"), ExtResource("6")])
+loadout_options = Array[Resource]([SubResource("LO_STD"), SubResource("LO_ARQUEBUS")])
+keywords = {
+&"demonic": 1,
+&"hateful": 1,
+&"negate_fire": 1,
+&"the_court": 1,
+&"torturer": 1
+}

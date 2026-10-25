@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="ArmouryItem" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/armoury_item.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+item_id = &"heavy_ballistic_shield"
+name_key = "ARM_HEAVY_BALLISTIC_SHIELD"
+desc_key = "ARM_HEAVY_BALLISTIC_SHIELD_DESC"
+category = 4
+cost = 15
+cost_currency = 0
+limit_per_warband = 0
+elite_only = false
+required_unit_names = Array[String]([])
+required_keywords = Array[StringName]([])
+required_item_id = &"machine_armour"
+restriction_key = "ARM_RESTRICT_MACHINE_ARMOUR_ONLY"
+granted_attacks = Array[Resource]([])
+armour_value = 0
+granted_keywords = {
+&"shield": 1,
+&"cover": 1,
+&"shield_combo": 1
+}
+hands = 1

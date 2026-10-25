@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="ArmouryItem" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/armoury_item.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+item_id = &"compound_eyes_helmet"
+name_key = "ARM_COMPOUND_EYES_HELMET"
+desc_key = "ARM_COMPOUND_EYES_HELMET_DESC"
+category = 5
+cost = 10
+cost_currency = 0
+limit_per_warband = 3
+elite_only = true
+required_unit_names = Array[String](["Herald of Beelzebub"])
+required_keywords = Array[StringName]([])
+required_item_id = &""
+is_headgear = true
+restriction_key = "ARM_RESTRICT_HERALD_OF_BEELZEBUB_ELITE_ONLY"
+granted_attacks = Array[Resource]([])
+armour_value = 0
+granted_keywords = {
+&"negate_shrapnel": 1,
+&"ranged_dice_bonus": 1
+}
+hands = 0

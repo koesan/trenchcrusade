@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scenes/ui/overlays/loading/loading_overlay.gd" id="1_script"]
+[ext_resource type="Theme" path="res://assets/themes/gothic_theme.tres" id="2_theme"]
+[ext_resource type="Texture2D" path="res://assets/textures/ui/menu_backgrounds/lobby_bg_01.jpg" id="3_bg"]
+[ext_resource type="Texture2D" path="res://assets/textures/ui/vignette_overlay.png" id="4_vignette"]
+[ext_resource type="Texture2D" path="res://assets/textures/menu_logo.webp" id="5_logo"]
+
+[node name="LoadingOverlay" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_theme")
+color = Color(0.054902, 0.0431373, 0.027451, 1)
+script = ExtResource("1_script")
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(0.32, 0.3, 0.28, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_bg")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Vignette" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_vignette")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Center"]
+layout_mode = 2
+theme_override_constants/separation = 28
+
+[node name="Logo" type="TextureRect" parent="Center/VBox"]
+custom_minimum_size = Vector2(420, 61)
+layout_mode = 2
+texture = ExtResource("5_logo")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ProgressBar" type="ProgressBar" parent="Center/VBox"]
+custom_minimum_size = Vector2(320, 5)
+layout_mode = 2
+size_flags_horizontal = 4
+max_value = 1.0
+show_percentage = false

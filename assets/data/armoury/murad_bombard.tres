@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="ArmouryItem" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/armoury_item.gd" id="1"]
+[ext_resource type="Resource" path="res://assets/data/attacks/murad_bombard.tres" id="2"]
+
+[resource]
+script = ExtResource("1")
+item_id = &"murad_bombard"
+name_key = "ATTACK_MURAD_BOMBARD"
+desc_key = "ATTACK_MURAD_BOMBARD_DESC"
+category = 1
+cost = 50
+cost_currency = 0
+limit_per_warband = 1
+elite_only = false
+required_unit_names = Array[String](["Brazen Bull"])
+required_keywords = Array[StringName]([])
+required_item_id = &""
+restriction_key = "ARM_RESTRICT_BRAZEN_BULL_ONLY"
+granted_attacks = Array[Resource]([ExtResource("2")])
+armour_value = 0
+granted_keywords = {
+
+}
+hands = 1

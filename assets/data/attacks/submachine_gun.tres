@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="AttackData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/attack_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+attack_name = "ATTACK_SUBMACHINE_GUN"
+attack_range = 16.0
+description = "ATTACK_SUBMACHINE_GUN_DESC"
+attack_type = "RANGED"
+hands = "2H"
+is_assault = true
+ignore_cover = false
+ignore_armour = false
+is_sniper = false
+is_deadly = false
+is_cumbersome = false
+is_blast = false
+blast_radius = 0.0
+has_cleave = false
+cleave_count = 1
+dice_modifier = 0
+injury_dice_modifier = 0
+is_fire = false
+is_poison = false
+keywords = {
+&"bayonet_lug": 1,
+&"shield_combo": 1
+}

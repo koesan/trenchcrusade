@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AttackData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/attack_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+attack_name = "ATTACK_OPHIDIAN_RIFLE"
+attack_range = 30.0
+description = "ATTACK_OPHIDIAN_RIFLE_DESC"
+attack_type = "RANGED"
+hands = "2H"
+keywords = {
+&"heavy": 1,
+&"unnatural_inversion": 1
+}

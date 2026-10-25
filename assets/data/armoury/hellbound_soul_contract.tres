@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="ArmouryItem" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/armoury_item.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+item_id = &"hellbound_soul_contract"
+name_key = "ARM_HELLBOUND_SOUL_CONTRACT"
+desc_key = "ARM_HELLBOUND_SOUL_CONTRACT_DESC"
+category = 5
+cost = 5
+cost_currency = 0
+limit_per_warband = 3
+elite_only = false
+required_unit_names = Array[String](["Heretic Trooper"])
+required_keywords = Array[StringName]([])
+required_item_id = &""
+restriction_key = "ARM_RESTRICT_HERETIC_TROOPER_ONLY"
+granted_attacks = Array[Resource]([])
+armour_value = 0
+granted_keywords = {
+&"hellbound_contract": 1
+}
+hands = 0

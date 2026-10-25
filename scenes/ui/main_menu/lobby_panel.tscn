@@ -1,0 +1,125 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Theme" path="res://assets/themes/gothic_theme.tres" id="1_theme"]
+[ext_resource type="Script" path="res://scenes/ui/main_menu/lobby_panel.gd" id="3_script"]
+
+[node name="LobbyPanel" type="PanelContainer"]
+custom_minimum_size = Vector2(460, 520)
+theme = ExtResource("1_theme")
+theme_type_variation = &"PanelIron"
+script = ExtResource("3_script")
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBox" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="LobbyTitle" type="Label" parent="Margin/VBox"]
+layout_mode = 2
+theme_type_variation = &"LabelTitle"
+text = "HOLY_CAMPAIGN"
+horizontal_alignment = 1
+
+[node name="Divider" type="HSeparator" parent="Margin/VBox"]
+layout_mode = 2
+
+[node name="Grid" type="GridContainer" parent="Margin/VBox"]
+layout_mode = 2
+theme_override_constants/h_separation = 14
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="NameLabel" type="Label" parent="Margin/VBox/Grid"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+text = "SQUAD_NAME"
+horizontal_alignment = 2
+
+[node name="NameInput" type="LineEdit" parent="Margin/VBox/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_length = 24
+
+[node name="IPLabel" type="Label" parent="Margin/VBox/Grid"]
+layout_mode = 2
+text = "IP_ADDRESS"
+horizontal_alignment = 2
+
+[node name="IPInput" type="LineEdit" parent="Margin/VBox/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "127.0.0.1"
+placeholder_text = "127.0.0.1"
+
+[node name="PortLabel" type="Label" parent="Margin/VBox/Grid"]
+layout_mode = 2
+text = "PORT"
+horizontal_alignment = 2
+
+[node name="PortInput" type="LineEdit" parent="Margin/VBox/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "10567"
+placeholder_text = "10567"
+
+[node name="PasswordLabel" type="Label" parent="Margin/VBox/Grid"]
+layout_mode = 2
+text = "PASSWORD_LBL"
+horizontal_alignment = 2
+
+[node name="PasswordInput" type="LineEdit" parent="Margin/VBox/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+secret = true
+
+[node name="ButtonsHBox" type="HBoxContainer" parent="Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="HostButton" type="Button" parent="Margin/VBox/ButtonsHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"ButtonSecondary"
+text = "HOST_GAME"
+
+[node name="JoinButton" type="Button" parent="Margin/VBox/ButtonsHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"ButtonSecondary"
+text = "JOIN_GAME"
+
+[node name="StatusLabel" type="Label" parent="Margin/VBox"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_type_variation = &"LabelSubtitle"
+text = "STATUS_DEFAULT"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="PlayerListLabel" type="Label" parent="Margin/VBox"]
+layout_mode = 2
+theme_type_variation = &"LabelGoldAccent"
+text = "SQUADS_ON_FRONT"
+
+[node name="PlayerList" type="ItemList" parent="Margin/VBox"]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="StartMatchButton" type="Button" parent="Margin/VBox"]
+layout_mode = 2
+theme_type_variation = &"ButtonPrimary"
+disabled = true
+text = "START_BATTLE"
+
+[node name="CloseLobbyButton" type="Button" parent="Margin/VBox"]
+layout_mode = 2
+theme_type_variation = &"ButtonGhost"
+text = "BACK"

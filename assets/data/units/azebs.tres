@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="UnitData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/unit_data.gd" id="1"]
+[ext_resource type="Resource" path="res://assets/data/attacks/sword_axe.tres" id="1_f1hk0"]
+[ext_resource type="Resource" path="res://assets/data/attacks/jezzail.tres" id="2_b1krj"]
+[ext_resource type="Script" path="res://scripts/data/loadout_option.gd" id="5"]
+[ext_resource type="Resource" path="res://assets/data/attacks/musket.tres" id="6"]
+
+[sub_resource type="Resource" id="Loadout1"]
+script = ExtResource("5")
+option_name_key = "AZEB_LOADOUT_STANDARD"
+
+[sub_resource type="Resource" id="Loadout2"]
+script = ExtResource("5")
+option_name_key = "AZEB_LOADOUT_SKIRMISHER"
+cost_delta = 5
+extra_keywords = {
+&"skirmisher": 1
+}
+
+[sub_resource type="Resource" id="LO_MUSKET"]
+script = ExtResource("5")
+option_name_key = "AZEB_LOADOUT_MUSKET"
+attacks_override = Array[Resource]([ExtResource("1_f1hk0"), ExtResource("6")])
+cost_delta = -2
+
+[resource]
+script = ExtResource("1")
+unit_name = "Azeb"
+faction_id = &"iron_sultanate"
+cost = 36
+kit_cost = 11
+melee_dice_modifier = -1
+model_scene_path = "res://assets/models/characters/Azebs.glb"
+attacks = Array[Resource]([ExtResource("1_f1hk0"), ExtResource("2_b1krj")])
+loadout_options = Array[Resource]([SubResource("Loadout1"), SubResource("Loadout2"), SubResource("LO_MUSKET")])
+keywords = {
+&"sultanate": 1
+}

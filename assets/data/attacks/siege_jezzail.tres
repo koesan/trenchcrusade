@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AttackData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/attack_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+attack_name = "ATTACK_SIEGE_JEZZAIL"
+attack_range = 30.0
+description = "ATTACK_SIEGE_JEZZAIL_DESC"
+attack_type = "RANGED"
+hands = "2H"
+injury_dice_modifier = 1
+keywords = {
+&"heavy": 1
+}

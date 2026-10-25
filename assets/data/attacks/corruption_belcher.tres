@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="AttackData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/attack_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+attack_name = "ATTACK_CORRUPTION_BELCHER"
+attack_range = 8.0
+description = "ATTACK_CORRUPTION_BELCHER_DESC"
+attack_type = "RANGED"
+hands = "2H"
+ignore_armour = true
+is_poison = true
+keywords = {
+&"flamethrower": 1,
+&"gas": 1
+}

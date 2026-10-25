@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="AttackData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/attack_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+attack_name = "ATTACK_VISCERA_CANNON"
+attack_range = 24.0
+description = "ATTACK_VISCERA_CANNON_DESC"
+attack_type = "RANGED"
+hands = "2H"
+dice_modifier = 2
+keywords = {
+&"heavy": 1,
+&"self_sacrifice": 1
+}

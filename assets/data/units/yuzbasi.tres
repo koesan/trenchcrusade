@@ -1,0 +1,57 @@
+[gd_resource type="Resource" script_class="UnitData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/unit_data.gd" id="1"]
+[ext_resource type="Resource" path="res://assets/data/attacks/sword_axe.tres" id="2_ec1ky"]
+[ext_resource type="Resource" path="res://assets/data/attacks/pistol.tres" id="3_khd4w"]
+[ext_resource type="Resource" path="res://assets/data/abilities/mubarizun.tres" id="4"]
+[ext_resource type="Resource" path="res://assets/data/attacks/pistol_melee.tres" id="4_cv5nb"]
+[ext_resource type="Script" path="res://scripts/data/loadout_option.gd" id="5"]
+[ext_resource type="Resource" path="res://assets/data/attacks/machine_gun.tres" id="7"]
+
+[sub_resource type="Resource" id="Loadout1"]
+script = ExtResource("5")
+option_name_key = "YUZBASI_LOADOUT_STANDARD"
+
+[sub_resource type="Resource" id="Loadout2"]
+script = ExtResource("5")
+option_name_key = "YUZBASI_LOADOUT_VETERAN"
+cost_delta = 10
+extra_keywords = {
+&"counter_charge": 1,
+&"strong": 1
+}
+
+[sub_resource type="Resource" id="Loadout3"]
+script = ExtResource("5")
+option_name_key = "YUZBASI_LOADOUT_MACHINE_GUN"
+attacks_override = Array[Resource]([ExtResource("2_ec1ky"), ExtResource("7")])
+cost_delta = 44
+
+[sub_resource type="Resource" id="Loadout4"]
+script = ExtResource("5")
+option_name_key = "YUZBASI_LOADOUT_REINFORCED"
+armour_override = 2
+cost_delta = 40
+
+[resource]
+script = ExtResource("1")
+unit_name = "Yuzbasi"
+faction_id = &"iron_sultanate"
+cost = 80
+kit_cost = 10
+availability_max = 1
+melee_dice_modifier = 2
+ranged_dice_modifier = 2
+model_scene_path = "res://assets/models/characters/Yuzbasi.glb"
+is_leader = true
+has_tough = true
+abilities = Array[Resource]([ExtResource("4")])
+attacks = Array[Resource]([ExtResource("2_ec1ky"), ExtResource("3_khd4w"), ExtResource("4_cv5nb")])
+loadout_options = Array[Resource]([SubResource("Loadout1"), SubResource("Loadout2"), SubResource("Loadout3"), SubResource("Loadout4")])
+keywords = {
+&"elite": 1,
+&"leader": 1,
+&"mubarizun": 1,
+&"negate_fear": 1,
+&"sultanate": 1
+}

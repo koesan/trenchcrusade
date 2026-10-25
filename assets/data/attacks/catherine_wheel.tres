@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="AttackData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/attack_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+attack_name = "ATTACK_CATHERINE_WHEEL"
+attack_range = 1.0
+description = "ATTACK_CATHERINE_WHEEL_DESC"
+attack_type = "MELEE"
+is_deadly = true
+dice_modifier = 1
+keywords = {
+&"heavy": 1,
+&"risky": 1
+}

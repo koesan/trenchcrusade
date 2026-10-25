@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="UnitData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/unit_data.gd" id="1"]
+[ext_resource type="Resource" path="res://assets/data/attacks/head_taker.tres" id="2"]
+[ext_resource type="Resource" path="res://assets/data/abilities/demonic_aura.tres" id="3"]
+[ext_resource type="Resource" path="res://assets/data/abilities/annihilator.tres" id="4"]
+[ext_resource type="Resource" path="res://assets/data/attacks/sword_axe.tres" id="5"]
+[ext_resource type="Resource" path="res://assets/data/attacks/malebranche_sword.tres" id="6"]
+
+[resource]
+script = ExtResource("1")
+unit_name = "Desecrated Saint"
+battlekit_rules = {
+"categories": [0]
+}
+faction_id = &"court_of_seven_headed_serpent"
+cost = 209
+kit_cost = 69
+availability_max = 1
+armour = 3
+melee_dice_modifier = 3
+model_scene_path = "res://assets/models/characters/Desecrated_Saint.glb"
+has_tough = true
+has_fear = true
+abilities = Array[Resource]([ExtResource("3"), ExtResource("4")])
+attacks = Array[Resource]([ExtResource("2"), ExtResource("5"), ExtResource("6")])
+keywords = {
+&"annihilator": 1,
+&"demonic": 1,
+&"fixed_weapon_loadout": 1,
+&"ignore_offhand_weapon": 1,
+&"negate_fire": 1,
+&"negate_heavy": 1,
+&"strong": 1,
+&"the_court": 1
+}

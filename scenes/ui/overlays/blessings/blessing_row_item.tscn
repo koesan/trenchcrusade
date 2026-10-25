@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scenes/ui/overlays/blessings/blessing_row_item.gd" id="1_script"]
+
+[node name="BlessingRowItem" type="HBoxContainer"]
+script = ExtResource("1_script")
+
+[node name="NameLabel" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Fighter Name"
+
+[node name="CountLabel" type="Label" parent="."]
+layout_mode = 2
+theme_type_variation = &"LabelGoldAccent"
+custom_minimum_size = Vector2(100, 0)
+text = "0 Blessing"

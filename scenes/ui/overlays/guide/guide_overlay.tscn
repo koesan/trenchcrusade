@@ -1,0 +1,192 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Theme" path="res://assets/themes/gothic_theme.tres" id="1_theme"]
+[ext_resource type="Script" path="res://scenes/ui/overlays/guide/codex_panel.gd" id="3_script"]
+[ext_resource type="Script" path="res://scenes/ui/overlays/guide/guide_overlay.gd" id="4_root"]
+
+[node name="GuideOverlay" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_theme")
+script = ExtResource("4_root")
+
+[node name="Panel" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(1150, 650)
+layout_mode = 2
+theme_type_variation = &"PanelIron"
+
+[node name="Margin" type="MarginContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBox" type="VBoxContainer" parent="Panel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="CodexPanel" type="VBoxContainer" parent="Panel/Margin/VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("3_script")
+
+[node name="Title" type="Label" parent="Panel/Margin/VBox/CodexPanel"]
+layout_mode = 2
+theme_type_variation = &"LabelTitle"
+text = "✝ LORE & RULES ✝"
+horizontal_alignment = 1
+
+[node name="MainHBox" type="HBoxContainer" parent="Panel/Margin/VBox/CodexPanel"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="LeftPanel" type="VBoxContainer" parent="Panel/Margin/VBox/CodexPanel/MainHBox"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="FactionsTitle" type="Label" parent="Panel/Margin/VBox/CodexPanel/MainHBox/LeftPanel"]
+layout_mode = 2
+theme_type_variation = &"LabelTitle"
+text = "MEZHEPLER / FACTIONS"
+horizontal_alignment = 1
+
+[node name="ScrollFactions" type="ScrollContainer" parent="Panel/Margin/VBox/CodexPanel/MainHBox/LeftPanel"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="FactionList" type="VBoxContainer" parent="Panel/Margin/VBox/CodexPanel/MainHBox/LeftPanel/ScrollFactions"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="Sep1" type="VSeparator" parent="Panel/Margin/VBox/CodexPanel/MainHBox"]
+layout_mode = 2
+
+[node name="MidPanel" type="VBoxContainer" parent="Panel/Margin/VBox/CodexPanel/MainHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="HeaderHBox" type="HBoxContainer" parent="Panel/Margin/VBox/CodexPanel/MainHBox/MidPanel"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="FactionLogo" type="TextureRect" parent="Panel/Margin/VBox/CodexPanel/MainHBox/MidPanel/HeaderHBox"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FactionName" type="Label" parent="Panel/Margin/VBox/CodexPanel/MainHBox/MidPanel/HeaderHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"LabelTitle"
+
+[node name="ScrollLore" type="ScrollContainer" parent="Panel/Margin/VBox/CodexPanel/MainHBox/MidPanel"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_scroll_mode = 0
+
+[node name="LoreVBox" type="VBoxContainer" parent="Panel/Margin/VBox/CodexPanel/MainHBox/MidPanel/ScrollLore"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FactionLore" type="Label" parent="Panel/Margin/VBox/CodexPanel/MainHBox/MidPanel/ScrollLore/LoreVBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"LabelCodexBody"
+autowrap_mode = 3
+
+[node name="SepMid" type="HSeparator" parent="Panel/Margin/VBox/CodexPanel/MainHBox/MidPanel"]
+layout_mode = 2
+
+[node name="RosterTitle" type="Label" parent="Panel/Margin/VBox/CodexPanel/MainHBox/MidPanel"]
+layout_mode = 2
+theme_type_variation = &"LabelTitle"
+text = "MEZHEP NEFERLERI / UNITS"
+
+[node name="ScrollUnits" type="ScrollContainer" parent="Panel/Margin/VBox/CodexPanel/MainHBox/MidPanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="UnitGrid" type="GridContainer" parent="Panel/Margin/VBox/CodexPanel/MainHBox/MidPanel/ScrollUnits"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 15
+columns = 3
+
+[node name="Sep2" type="VSeparator" parent="Panel/Margin/VBox/CodexPanel/MainHBox"]
+layout_mode = 2
+
+[node name="RightPanel" type="PanelContainer" parent="Panel/Margin/VBox/CodexPanel/MainHBox"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_type_variation = &"PanelIron"
+
+[node name="RightMargin" type="MarginContainer" parent="Panel/Margin/VBox/CodexPanel/MainHBox/RightPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ScrollDetails" type="ScrollContainer" parent="Panel/Margin/VBox/CodexPanel/MainHBox/RightPanel/RightMargin"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="DetailsVBox" type="VBoxContainer" parent="Panel/Margin/VBox/CodexPanel/MainHBox/RightPanel/RightMargin/ScrollDetails"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="PreviewContainer" type="MarginContainer" parent="Panel/Margin/VBox/CodexPanel/MainHBox/RightPanel/RightMargin/ScrollDetails/DetailsVBox"]
+custom_minimum_size = Vector2(260, 200)
+layout_mode = 2
+
+[node name="UnitName" type="Label" parent="Panel/Margin/VBox/CodexPanel/MainHBox/RightPanel/RightMargin/ScrollDetails/DetailsVBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"LabelTitle"
+horizontal_alignment = 1
+
+[node name="UnitStats" type="Label" parent="Panel/Margin/VBox/CodexPanel/MainHBox/RightPanel/RightMargin/ScrollDetails/DetailsVBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"LabelCodexBody"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="UnitAbility" type="Label" parent="Panel/Margin/VBox/CodexPanel/MainHBox/RightPanel/RightMargin/ScrollDetails/DetailsVBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"LabelGoldAccent"
+autowrap_mode = 3
+
+[node name="SepDetails" type="HSeparator" parent="Panel/Margin/VBox/CodexPanel/MainHBox/RightPanel/RightMargin/ScrollDetails/DetailsVBox"]
+layout_mode = 2
+
+[node name="UnitLore" type="Label" parent="Panel/Margin/VBox/CodexPanel/MainHBox/RightPanel/RightMargin/ScrollDetails/DetailsVBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"LabelMuted"
+autowrap_mode = 3
+
+[node name="CloseButton" type="Button" parent="Panel/Margin/VBox/CodexPanel"]
+custom_minimum_size = Vector2(160, 36)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"ButtonGhost"
+text = "← BACK"

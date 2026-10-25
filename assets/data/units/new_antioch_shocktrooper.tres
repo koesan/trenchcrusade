@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="UnitData" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/unit_data.gd" id="1"]
+[ext_resource type="Resource" path="res://assets/data/attacks/bayonet.tres" id="2"]
+[ext_resource type="Resource" path="res://assets/data/abilities/shock_charge.tres" id="3"]
+[ext_resource type="Resource" path="res://assets/data/attacks/bolt_action_rifle.tres" id="3_7khp6"]
+[ext_resource type="Resource" path="res://assets/data/abilities/assault_drill.tres" id="4"]
+[ext_resource type="Script" path="res://scripts/data/loadout_option.gd" id="5"]
+[ext_resource type="Resource" path="res://assets/data/attacks/great_hammer_maul.tres" id="6"]
+
+[sub_resource type="Resource" id="L1"]
+script = ExtResource("5")
+option_name_key = "SHOCKTROOPER_LOADOUT_BAYONET"
+
+[sub_resource type="Resource" id="L2"]
+script = ExtResource("5")
+option_name_key = "SHOCKTROOPER_LOADOUT_GREAT_HAMMER"
+attacks_override = Array[Resource]([ExtResource("6")])
+cost_delta = -2
+
+[resource]
+script = ExtResource("1")
+unit_name = "Shocktrooper"
+faction_id = &"new_antioch"
+cost = 57
+kit_cost = 12
+availability_max = 5
+melee_dice_modifier = 1
+model_scene_path = "res://assets/models/characters/Shocktrooper.glb"
+abilities = Array[Resource]([ExtResource("3"), ExtResource("4")])
+attacks = Array[Resource]([ExtResource("3_7khp6"), ExtResource("2")])
+loadout_options = Array[Resource]([SubResource("L1"), SubResource("L2")])
+keywords = {
+&"negate_heavy_effect": 1,
+&"new_antioch": 1,
+&"shock_charge": 1
+}
