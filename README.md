@@ -165,27 +165,93 @@ On first launch the game picks a **Low**, **Medium** or **High** graphics preset
 
 ---
 
-## Getting started
+## Installation
 
-You need **[Godot 4.7](https://godotengine.org/download)** or newer and **[Git LFS](https://git-lfs.com)** (models, textures and audio are stored with LFS).
+There is no ready-made download yet. You run the game from its source with the free Godot engine. It takes about five minutes.
+
+### 1. Install the tools
+
+| Tool | What it is for | Where to get it |
+| --- | --- | --- |
+| **Godot 4.7** (standard, not .NET) | Runs the game | [godotengine.org/download](https://godotengine.org/download) |
+| **Git** | Downloads the project | [git-scm.com](https://git-scm.com/downloads) |
+| **Git LFS** | Downloads the models, textures and audio | [git-lfs.com](https://git-lfs.com) |
+
+- **Windows:** Git for Windows already includes Git LFS. Godot is a single `.exe`. Unzip it anywhere and run it.
+- **Linux:** for example `sudo apt install git git-lfs` (Debian/Ubuntu) or `sudo pacman -S git git-lfs godot` (Arch). You can also download Godot from its website.
+
+> [!IMPORTANT]
+> Do **not** use GitHub's **Code → Download ZIP** button. The ZIP has no 3D models, textures or sounds, so the game will not work. Use `git clone` as shown below.
+
+### 2. Download the project
+
+Open a terminal (on Windows: **Git Bash** or **PowerShell**) and run:
 
 ```bash
 git lfs install
 git clone https://github.com/koesan/Trenchcrusade.git
-cd Trenchcrusade
-godot --path .
 ```
 
-From the main menu, pick **Local battle** to play on one computer or **Online battle** to host or join a game (port `10567`). An unfinished battle can be resumed with **Continue**.
+This creates a `Trenchcrusade` folder. The download is about 700 MB.
 
-To build a standalone game, install Godot's export templates and run:
+### 3. Open it in Godot
+
+1. Start Godot. The **Project Manager** opens.
+2. Click **Import**, go to the `Trenchcrusade` folder and select `project.godot`.
+3. Click **Import & Edit**.
+4. The first time, Godot imports all the assets. This takes one to a few minutes. Wait until the progress bar is done.
+
+### 4. Play
+
+Press **F5** (or the ▶ button at the top right). The game opens on the main menu.
+
+- **Local battle:** two players take turns on one computer.
+- **Online battle:** one player hosts, the other joins with the host's IP address. The game uses port `10567` (TCP/UDP). For play over the internet, the host must open this port on their router and firewall.
+- **Continue:** resume an unfinished battle.
+
+<details>
+<summary><b>Command-line alternative</b></summary>
+
+```bash
+cd Trenchcrusade
+godot --headless --import   # one time only: imports the assets
+godot --path .              # starts the game
+```
+
+On Windows, use the full name of the Godot executable instead of `godot`, for example `Godot_v4.7-stable_win64.exe`.
+</details>
+
+### Troubleshooting
+
+| Problem | Fix |
+| --- | --- |
+| Models are missing, textures are pink, or there is no sound | Git LFS was not active when you cloned. Inside the folder, run `git lfs install` and then `git lfs pull`. |
+| Godot says the project is for a newer version | Update Godot to 4.7 or newer. |
+| The game is slow or the screen goes black | Lower the preset under **Settings → Graphics**, or start Godot with `--rendering-driver opengl3`. |
+| Online: the other player cannot connect | Check that port `10567` is open on the host's firewall and router. |
+
+### Updating
+
+To get the latest version, run this inside the `Trenchcrusade` folder:
+
+```bash
+git pull
+```
+
+### For developers
+
+Build a standalone game (first install the export templates from **Editor → Manage Export Templates**):
 
 ```bash
 godot --headless --export-release "Windows Desktop" build/windows/IronRequiem.exe
 godot --headless --export-release "Linux" build/linux/IronRequiem.x86_64
 ```
 
-Tests run with `godot --headless --path . tests/test_main.tscn`.
+Run the tests:
+
+```bash
+godot --headless --path . tests/test_main.tscn
+```
 
 ---
 
@@ -357,27 +423,93 @@ Bir hamle kurala takılırsa, ekranın ortasında kısa bir bildirim nedenini ve
 
 ---
 
-## Başlarken
+## Kurulum
 
-**[Godot 4.7](https://godotengine.org/download)** ya da üstü ve **[Git LFS](https://git-lfs.com)** gerekir (modeller, dokular ve sesler LFS ile tutulur).
+Henüz hazır bir indirme dosyası yok. Oyunu kaynak kodundan, ücretsiz Godot motoruyla çalıştırırsın. Yaklaşık beş dakika sürer.
+
+### 1. Gerekli araçları kur
+
+| Araç | Ne işe yarar | Nereden |
+| --- | --- | --- |
+| **Godot 4.7** (standart sürüm, .NET değil) | Oyunu çalıştırır | [godotengine.org/download](https://godotengine.org/download) |
+| **Git** | Projeyi indirir | [git-scm.com](https://git-scm.com/downloads) |
+| **Git LFS** | Modelleri, dokuları ve sesleri indirir | [git-lfs.com](https://git-lfs.com) |
+
+- **Windows:** Git for Windows, Git LFS'i zaten içerir. Godot tek bir `.exe` dosyasıdır; zipten çıkar ve çalıştır.
+- **Linux:** örneğin `sudo apt install git git-lfs` (Debian/Ubuntu) ya da `sudo pacman -S git git-lfs godot` (Arch). Godot'u sitesinden de indirebilirsin.
+
+> [!IMPORTANT]
+> GitHub'daki **Code → Download ZIP** düğmesini **kullanma**. ZIP'te 3B modeller, dokular ve sesler yoktur, oyun çalışmaz. Aşağıdaki gibi `git clone` kullan.
+
+### 2. Projeyi indir
+
+Bir terminal aç (Windows'ta **Git Bash** ya da **PowerShell**) ve şunu çalıştır:
 
 ```bash
 git lfs install
 git clone https://github.com/koesan/Trenchcrusade.git
-cd Trenchcrusade
-godot --path .
 ```
 
-Ana menüde **Yerel savaş** ile aynı bilgisayarda oynayabilir, **Çevrimiçi savaş** ile oyun kurabilir ya da katılabilirsin (port `10567`). Yarım kalan savaş **Devam et** ile sürdürülür.
+Bu bir `Trenchcrusade` klasörü oluşturur. İndirme yaklaşık 700 MB'tır.
 
-Tek başına çalışan bir oyun derlemek için Godot'un dışa aktarma şablonlarını kurup şunu çalıştır:
+### 3. Godot'ta aç
+
+1. Godot'u başlat. **Proje Yöneticisi** açılır.
+2. **İçe Aktar** (Import) düğmesine bas, `Trenchcrusade` klasörüne gir ve `project.godot` dosyasını seç.
+3. **İçe Aktar ve Düzenle** (Import & Edit) düğmesine bas.
+4. İlk açılışta Godot tüm dosyaları içe aktarır. Bu bir ila birkaç dakika sürer; ilerleme çubuğu bitene kadar bekle.
+
+### 4. Oyna
+
+**F5**'e (ya da sağ üstteki ▶ düğmesine) bas. Oyun ana menüyle açılır.
+
+- **Yerel savaş:** iki oyuncu aynı bilgisayarda sırayla oynar.
+- **Çevrimiçi savaş:** bir oyuncu oyunu kurar, diğeri kurucunun IP adresiyle katılır. Oyun `10567` portunu (TCP/UDP) kullanır. İnternet üzerinden oynamak için kurucunun bu portu modemde ve güvenlik duvarında açması gerekir.
+- **Devam et:** yarım kalan savaşı sürdürür.
+
+<details>
+<summary><b>Komut satırıyla</b></summary>
+
+```bash
+cd Trenchcrusade
+godot --headless --import   # yalnızca ilk sefer: dosyaları içe aktarır
+godot --path .              # oyunu başlatır
+```
+
+Windows'ta `godot` yerine Godot dosyasının tam adını yaz, örneğin `Godot_v4.7-stable_win64.exe`.
+</details>
+
+### Sorun giderme
+
+| Sorun | Çözüm |
+| --- | --- |
+| Modeller yok, dokular pembe ya da ses gelmiyor | Klonlarken Git LFS etkin değildi. Klasörün içinde önce `git lfs install`, sonra `git lfs pull` çalıştır. |
+| Godot projenin daha yeni bir sürüm için olduğunu söylüyor | Godot'u 4.7 ya da üstüne güncelle. |
+| Oyun yavaş ya da ekran siyah | **Ayarlar → Grafik** bölümünden ayarı düşür ya da Godot'u `--rendering-driver opengl3` ile başlat. |
+| Çevrimiçi: diğer oyuncu bağlanamıyor | Kurucunun güvenlik duvarında ve modeminde `10567` portunun açık olduğunu kontrol et. |
+
+### Güncelleme
+
+En son sürümü almak için `Trenchcrusade` klasörünün içinde şunu çalıştır:
+
+```bash
+git pull
+```
+
+### Geliştiriciler için
+
+Tek başına çalışan bir oyun derlemek için (önce **Düzenleyici → Dışa Aktarma Şablonlarını Yönet** bölümünden şablonları kur):
 
 ```bash
 godot --headless --export-release "Windows Desktop" build/windows/IronRequiem.exe
 godot --headless --export-release "Linux" build/linux/IronRequiem.x86_64
 ```
 
-Testler: `godot --headless --path . tests/test_main.tscn`
+Testleri çalıştır:
+
+```bash
+godot --headless --path . tests/test_main.tscn
+```
 
 ---
 
