@@ -9,7 +9,6 @@
 # Iron Requiem
 
 <p align="center">
-  <a href="docs/demo/iron_requiem_demo.mp4"><img src="docs/demo/demo_thumb.jpg" alt="Iron Requiem gameplay demo" width="100%"></a><br>
   <a href="docs/demo/iron_requiem_demo.mp4"><b>▶ Watch the gameplay demo (5 min)</b></a>
 </p>
 
