@@ -9,6 +9,11 @@
 # Iron Requiem
 
 <p align="center">
+  <a href="docs/demo/iron_requiem_demo.mp4"><img src="docs/demo/demo_thumb.jpg" alt="Iron Requiem gameplay demo" width="100%"></a><br>
+  <a href="docs/demo/iron_requiem_demo.mp4"><b>▶ Watch the gameplay demo (5 min)</b></a>
+</p>
+
+<p align="center">
   <img src="docs/screenshots/en/menu.jpg" alt="Iron Requiem main menu" width="100%">
 </p>
 
@@ -272,6 +277,11 @@ This is a **non-commercial fan project**.
 <a id="turkce"></a>
 
 # Iron Requiem
+
+<p align="center">
+  <a href="docs/demo/iron_requiem_demo.mp4"><img src="docs/demo/demo_thumb.jpg" alt="Iron Requiem oynanış videosu" width="100%"></a><br>
+  <a href="docs/demo/iron_requiem_demo.mp4"><b>▶ Oynanış videosunu izle (5 dk)</b></a>
+</p>
 
 <p align="center">
   <img src="docs/screenshots/tr/menu.jpg" alt="Iron Requiem ana menü" width="100%">
