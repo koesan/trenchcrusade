@@ -278,7 +278,6 @@ This is a **non-commercial fan project**.
 # Iron Requiem
 
 <p align="center">
-  <a href="docs/demo/iron_requiem_demo.mp4"><img src="docs/demo/demo_thumb.jpg" alt="Iron Requiem oynanış videosu" width="100%"></a><br>
   <a href="docs/demo/iron_requiem_demo.mp4"><b>▶ Oynanış videosunu izle (5 dk)</b></a>
 </p>
 
